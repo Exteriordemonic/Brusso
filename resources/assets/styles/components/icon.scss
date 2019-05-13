@@ -1,0 +1,32 @@
+.icon {
+  @include cssLock("width", 360, 1440, (30, 50));
+  @include cssLock("height", 360, 1440, (30, 50));
+
+  &--plus {
+    display: block;
+    border-radius: 100%;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 2px;
+      height: 40%;
+      background: color("light");
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+
+  &--dark {
+    background: color("dark");
+  }
+}

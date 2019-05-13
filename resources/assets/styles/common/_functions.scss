@@ -1,4 +1,4 @@
-@function theme-color($key: "primary") {
+@function color($key: "primary") {
   @return map-get($theme-colors, $key);
 }
 
