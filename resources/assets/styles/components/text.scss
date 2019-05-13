@@ -1,0 +1,8 @@
+.headline {
+  @include cssLock(
+    "font-size",
+    360,
+    1440,
+    (10, 100)
+  );
+}

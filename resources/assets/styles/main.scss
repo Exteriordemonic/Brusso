@@ -1,10 +1,14 @@
+/** Vendors */
+@import "vendors/scss-lock/css-lock";
+
+/** Common */
 @import "common/variables";
 @import "common/mixins";
 @import "common/functions";
 @import "common/extends";
 
 /** Import everything from autoload */
-@import "./autoload/**/*";
+// @import "./autoload/**/*";
 
 /**
  * Import npm dependencies
@@ -16,3 +20,6 @@
 
 /** Import theme styles */
 @import "common/global";
+
+/** Components */
+@import "components/text";
