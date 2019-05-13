@@ -25,6 +25,10 @@
 /** Components */
 @import "components/text";
 @import "components/icon";
+@import "components/container";
 
 /** Blocks */
 @import "blocks/product-block.scss";
+
+/** Layouts */
+@import "layouts/hero.scss";
