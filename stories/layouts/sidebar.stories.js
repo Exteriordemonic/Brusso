@@ -200,7 +200,17 @@ storiesOf('Layouts', module)
             </ul>
         </nav>
     </xmp>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2 class="subtitle bold">TODO:</h2>
+    <hr>
+    <ul>
+        <li>
+            [ _ ] Create subnavigation
+        </li>
+    </ul>
   `);
 
     
