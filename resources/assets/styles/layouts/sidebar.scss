@@ -1,0 +1,8 @@
+.navigation {
+  color: color("light");
+
+  &--reverse {
+    color: color("dark");
+    background-color: color("light");
+  }
+}
