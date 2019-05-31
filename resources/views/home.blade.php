@@ -1,12 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-@php
+  @php
     $section = get_field('components', 188);
     $hero = $section[0];
-@endphp
+  @endphp
 
+  @php 
+    $product_cats = get_terms( 'product_cat', ['hide_empty' => true, 'parent ' => 0,] );
+  @endphp
 
-   Home
+  @foreach ( $product_cats as $cat )
+    @include('layouts.components.hero', ['cat' => $cat])
+  @endforeach
+
   {!! get_the_posts_navigation() !!}
 @endsection

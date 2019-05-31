@@ -240,3 +240,17 @@ function the_breadcrumb() {
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );
+
+class Placeholder {
+    function image() {
+        return "images/sofa-bg.jpg"; 
+    }
+
+    function title() {
+        return '<a href="/sofa">Sofa</a> place <br> in your home'; 
+    }
+} 
+
+function image($id, $size, $class) {
+    return wp_get_attachment_image($id, $size, false, ['class'=>$class]);
+}

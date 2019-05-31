@@ -2,7 +2,8 @@ html,
 body {
   font-family: map-get($font-family, "main"), sans-serif;
   overflow-x: initial;
-  margin-top: 0 !important;
+  margin: 0 !important;
+  padding: 0;
 }
 
 #wpadminbar {
