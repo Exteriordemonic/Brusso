@@ -23,6 +23,12 @@
             <li>
                 @include('blocks.product-block', ['product'=>$product])
             </li>
+            <li>
+                @include('blocks.product-block', ['product'=>$product])
+            </li>
+            <li>
+                @include('blocks.product-block', ['product'=>$product])
+            </li>
             @endforeach
         </ul>
         @endif
