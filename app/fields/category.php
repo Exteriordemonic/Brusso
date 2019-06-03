@@ -11,5 +11,6 @@ $category
   
 $category
     ->addWysiwyg('header', ['label'=>'Nagłówek'])
-    ->addImage('bg_image', ['label'=>'Zdjęcie w tle']);
+    ->addImage('bg_image', ['label'=>'Zdjęcie w tle'])
+    ->addRelationship('products', ['label'=>'Produkty', 'post_type'=>'product']);
 return $category;

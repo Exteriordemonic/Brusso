@@ -16,28 +16,27 @@
  * Storybook: /blocks/product-block 
  * Styles: /blocks/product-block
  * */    
-
-    $title = '';
-    $price = '';
-    $image = '';
-    $permalink = '';
-    $addToBasket = '';
-
+    $product = wc_get_product( $product->ID );
+    $title = $product->get_name();
+    $price = $product->get_price();
+    $image = $product->get_image_id();
+    $permalink = $product->get_permalink();
+    $addToBasket = $product->add_to_cart_url();
 @endphp
 
-<a class="product-block" href="">
+<a class="product-block" href="{{ $permalink ? $permalink : '/' }}">
     <header class="product-block__header">
         <h3 class="product-block__title subtitle light">
-            Title
+            {{ $title ? $title : 'Title' }}
         </h3>
-        <span class="title bold">
-            976.75
+        <span class="title bold" data-price>
+            {!! $price ? $price : '-' !!}
         </span>
     </header>
-    <img src="/" alt="/">
+    {!! image($image, 'full', 'product-block__image') !!}
     <footer class="product-block__footer">
-        <a href="">
-            <span class="icon icon--plus"></span>
+        <a href="{{ $addToBasket }}">
+            <span class="icon icon--plus icon--dark"></span>
         </a>
     </footer>
 </a>
