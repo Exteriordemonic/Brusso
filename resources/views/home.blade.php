@@ -6,7 +6,7 @@
     $hero = $section[0];
   @endphp
 
-  @php 
+  @php
     $product_cats = get_terms( 'product_cat', ['hide_empty' => true, 'parent ' => 0,] );
   @endphp
 
@@ -14,5 +14,4 @@
     @include('layouts.components.hero', ['cat' => $cat])
   @endforeach
 
-  {!! get_the_posts_navigation() !!}
 @endsection

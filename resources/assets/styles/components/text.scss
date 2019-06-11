@@ -5,25 +5,25 @@
 }
 
 .headline {
-  @include cssLock("font-size", 360, 1440, (20, 80));
+  @include cssLock("font-size", 360, 1920, (22, 76));
 
   @extend %text;
 }
 
 .title {
-  @include cssLock("font-size", 360, 1440, (18, 36));
+  @include cssLock("font-size", 360, 1920, (18, 36));
 
   @extend %text;
 }
 
 .subtitle {
-  @include cssLock("font-size", 360, 1440, (16, 24));
+  @include cssLock("font-size", 360, 1920, (16, 24));
 
   @extend %text;
 }
 
 .text {
-  @include cssLock("font-size", 360, 1440, (12, 16));
+  @include cssLock("font-size", 360, 1920, (12, 16));
 
   @extend %text;
 }
