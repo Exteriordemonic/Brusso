@@ -1,4 +1,5 @@
-.list {
+.list,
+.nav {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -7,7 +8,8 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  &__elem {
+  &__elem,
+  .menu-item {
     @include cssLock("font-size", 360, 1440, (10, 30));
 
     display: inline-block;
@@ -26,6 +28,7 @@
       height: 1px;
       border-bottom: solid 3px;
       transition: $transition;
+      pointer-events: none;
     }
 
     &:hover {
@@ -35,13 +38,17 @@
     }
 
     &--special {
-      @include cssLock("letter-spacing", 360, 1440, (1, 2));
+      @include cssLock("letter-spacing", 360, 1920, (1, 2));
 
       color: color("special");
+      font-weight: 600;
+    }
 
-      a {
-        font-weight: 600;
-      }
+    a {
+      @extend .subtitle;
+
+      text-transform: uppercase;
+      font-weight: inherit;
     }
 
     &.-is-active {

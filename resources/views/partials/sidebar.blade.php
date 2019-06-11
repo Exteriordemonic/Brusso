@@ -1,5 +1,8 @@
 <nav class="navigation">
-    <ul class="list">
+    @if (has_nav_menu('primary_navigation'))
+    {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
+  @endif
+    {{-- <ul class="list">
         @php
           $product_cats = get_terms( 'product_cat', ['hide_empty' => true, 'parent ' => 0,] );
         @endphp
@@ -14,5 +17,5 @@
 
         @endforeach
 
-    </ul>
+    </ul> --}}
 </nav>

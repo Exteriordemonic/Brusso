@@ -1,11 +1,16 @@
 .sidebar {
+  @include cssLock("left", 360, 1920, (25, 100));
+
   position: fixed;
   top: 0;
   bottom: 0;
   margin: auto;
-  left: $gutter * 10;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 100;
+
+  @include media(md) {
+    display: flex;
+  }
 }

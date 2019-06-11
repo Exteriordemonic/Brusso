@@ -1,4 +1,5 @@
 .container {
-  max-width: calc(100% - #{$gutter * 60});
+  @include cssLock("max-width", 360, 1920, (300, 1000));
+
   margin: 0 auto;
 }
