@@ -30,7 +30,8 @@ $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
 
 $z-index: (
+  sidebar: 100,
   infobar: 200,
-  header: 100,
+  header: 200,
   preloader: 300
 );

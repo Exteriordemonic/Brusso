@@ -1,0 +1,19 @@
+.header {
+  @include cssLock("left", 360, 1920, (25, 100));
+  @include cssLock("top", 360, 1920, (25, 40));
+
+  position: absolute;
+  padding: 0 $gutter;
+  z-index: z-index("header");
+
+  &__brand {
+    @include cssLock("width", 360, 1920, (100, 200));
+
+    filter: invert(1);
+    display: block;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
