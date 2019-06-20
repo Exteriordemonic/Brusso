@@ -14,10 +14,11 @@
   $products = get_posts($args);
 @endphp
 
+@if($products)
 <ul class="products">
+  @foreach ($products as $product)
   <li>
-    {{-- @include('blocks.product') --}}
-  </li>
+    @include('blocks.product', ['product' => $product])
+  @endforeach
 </ul>
-
-@dump($products)
+@endif

@@ -1,0 +1,16 @@
+.products {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @include cssLock("grid-gap", 360, 1920, (12, 24));
+
+  @include media(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &::before {
+    display: none !important;
+  }
+}
