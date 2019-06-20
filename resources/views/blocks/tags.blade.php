@@ -19,4 +19,3 @@
   @endforeach
 </ul>
 @endif
-@dump($tags)
