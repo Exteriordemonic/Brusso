@@ -48,4 +48,6 @@ img {
 .main {
   display: block;
   width: 100%;
+  overflow-y: scroll;
+  background-color: rgba(color(greyy), 0.05);
 }

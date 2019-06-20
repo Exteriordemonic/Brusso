@@ -1,0 +1,21 @@
+.tag {
+  @extend .text;
+
+  @include cssLock("padding-right", 360, 1920, (24, 32));
+  @include cssLock("padding-left", 360, 1920, (24, 32));
+  @include cssLock("padding-top", 360, 1920, (12, 16));
+  @include cssLock("padding-bottom", 360, 1920, (12, 16));
+
+  border-radius: $gutter * 4;
+  display: inline-block;
+  background: color("light");
+  border: 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: $transition;
+
+  &.-is-active {
+    color: color("light");
+    background-color: color("special");
+  }
+}
