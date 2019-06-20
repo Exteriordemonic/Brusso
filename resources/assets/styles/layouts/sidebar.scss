@@ -1,16 +1,19 @@
 .sidebar {
-  @include cssLock("left", 360, 1920, (25, 100));
+  @include cssLock("padding-left", 360, 1920, (25, 100));
+  @include cssLock("padding-right", 360, 1920, (25, 100));
 
-  position: fixed;
+  position: relative;
   top: 0;
   bottom: 0;
-  margin: auto;
+  left: 0;
+  margin: 0;
   display: none;
   justify-content: center;
   align-items: center;
   z-index: z-index("sidebar");
+  background: color("light");
 
   @include media(md) {
-    display: flex;
+    display: inline-flex;
   }
 }

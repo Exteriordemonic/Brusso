@@ -9,7 +9,6 @@
   &__brand {
     @include cssLock("width", 360, 1920, (100, 200));
 
-    filter: invert(1);
     display: block;
 
     img {

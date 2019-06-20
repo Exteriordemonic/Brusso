@@ -1,0 +1,34 @@
+.home {
+  .header {
+    &__brand {
+      filter: invert(1);
+    }
+  }
+
+  .sidebar {
+    background: transparent;
+    padding-right: 0;
+    margin: auto;
+    position: fixed;
+  }
+
+  .navigation {
+    color: color("light");
+  }
+
+  .content {
+    height: auto;
+    display: initial;
+  }
+
+  .main {
+    display: initial;
+    width: auto;
+  }
+
+  .hero {
+    &__image {
+      opacity: 0.4;
+    }
+  }
+}

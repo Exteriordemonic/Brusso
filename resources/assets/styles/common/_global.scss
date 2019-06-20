@@ -37,3 +37,15 @@ img {
   width: 100%;
   display: block;
 }
+
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.main {
+  display: block;
+  width: 100%;
+}

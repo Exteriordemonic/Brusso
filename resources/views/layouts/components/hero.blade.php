@@ -1,11 +1,19 @@
 @php
     $placeholder = new Placeholder;
 
-    $cat_id = $cat->term_id;
-    $image = get_field('bg_image', 'term_'.  $cat_id )['ID'];
-    $header = get_field('header', 'term_'.  $cat_id );
+    if(is_product_category()) {
+      $cat_id = get_queried_object() -> term_id;
+      $header = get_field('header_cat', 'term_'.  $cat_id );
+    }
 
-    $products = get_field('products', 'term_'.  $cat_id );
+    else  {
+      $cat_id = $cat->term_id;
+      $header = get_field('header', 'term_'.  $cat_id );
+      $products = get_field('products', 'term_'.  $cat_id );
+    }
+
+    $image = get_field('bg_image', 'term_'.  $cat_id )['ID'];
+
 @endphp
 
 
