@@ -1,0 +1,42 @@
+.product {
+  @include cssLock("margin-bottom", 360, 1440, (24, 36));
+
+  display: inline-block;
+  position: relative;
+  color: color("dark");
+  text-align: left;
+  width: 100%;
+
+  &__header {
+    @include cssLock("bottom", 360, 1440, (12, 16));
+    @include cssLock("left", 360, 1440, (12, 16));
+
+    position: absolute;
+    right: unset;
+    top: unset;
+  }
+
+  &__price {
+    span {
+      @extend .text;
+    }
+  }
+
+  &__image {
+    height: auto;
+    border-radius: $gutter * 3;
+  }
+
+  &__title {
+    display: block;
+    color: color("greyy");
+  }
+
+  &__footer {
+    @include cssLock("bottom", 360, 1440, (-24, -36));
+    @include cssLock("left", 360, 1440, (12, 16));
+
+    position: absolute;
+    z-index: 200;
+  }
+}
