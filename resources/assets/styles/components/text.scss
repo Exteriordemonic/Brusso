@@ -28,7 +28,7 @@
   @extend %text;
 
   &--small {
-    @include cssLock("font-size", 360, 1920, (8, 12));
+    @include cssLock("font-size", 360, 1920, (10, 14));
   }
 }
 

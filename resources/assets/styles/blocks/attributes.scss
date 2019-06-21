@@ -1,0 +1,24 @@
+.attributes {
+  @include cssLock("grid-gap", 360, 1920, (12, 24));
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @include media(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__title {
+    @include cssLock("margin-bottom", 360, 1920, (6, 6));
+
+    margin-top: 0;
+    display: block;
+  }
+}

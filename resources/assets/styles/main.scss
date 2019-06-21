@@ -28,11 +28,14 @@
 @import "components/container";
 @import "components/list";
 @import "components/tag";
+@import "components/button";
 
 /** Blocks */
 @import "blocks/product-block.scss";
 @import "blocks/tags.scss";
 @import "blocks/product.scss";
+@import "blocks/product-details.scss";
+@import "blocks/attributes.scss";
 
 /** Layouts */
 @import "layouts/hero.scss";
@@ -41,6 +44,7 @@
 @import "layouts/header.scss";
 @import "layouts/shop.scss";
 @import "layouts/products.scss";
+@import "layouts/product-single.scss";
 
 /** Pages */
 @import "pages/home";

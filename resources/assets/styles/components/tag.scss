@@ -13,6 +13,20 @@
   -webkit-appearance: none;
   cursor: pointer;
   transition: $transition;
+  text-transform: lowercase;
+
+  &--clear {
+    @include cssLock("padding", 360, 1920, (12, 16));
+
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    color: color("greyy");
+
+    &:hover {
+      color: color("special");
+    }
+  }
 
   &.-is-active {
     color: color("light");
