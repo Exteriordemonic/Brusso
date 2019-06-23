@@ -1,18 +1,34 @@
 .header {
-  @include cssLock("left", 360, 1920, (25, 100));
-  @include cssLock("top", 360, 1920, (25, 40));
-
   position: fixed;
-  padding: 0 $gutter;
   z-index: z-index("header");
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  &__wrapper {
+    @include cssLock("padding-top", 360, 1920, (25, 40));
+    @include cssLock("padding-left", 360, 1920, (25, 100));
+    @include cssLock("padding-right", 360, 1920, (25, 100));
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__brand {
     @include cssLock("width", 360, 1920, (100, 200));
 
     display: block;
+    margin-left: $gutter;
 
     img {
       max-width: 100%;
     }
+  }
+
+  &__nav {
+    padding-right: $gutter;
   }
 }

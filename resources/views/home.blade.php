@@ -7,7 +7,7 @@
   @endphp
 
   @php
-    $product_cats = get_terms( 'product_cat', ['hide_empty' => true, 'parent ' => 0,] );
+    $product_cats = get_terms( 'product_cat', ['hide_empty' => true, 'parent' => 0,] );
   @endphp
 
   @foreach ( $product_cats as $cat )

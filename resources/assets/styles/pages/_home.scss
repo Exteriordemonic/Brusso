@@ -31,4 +31,10 @@
       opacity: 0.4;
     }
   }
+
+  .icon-nav {
+    &__img {
+      filter: invert(0);
+    }
+  }
 }

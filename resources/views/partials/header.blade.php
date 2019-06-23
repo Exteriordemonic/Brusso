@@ -6,14 +6,12 @@
 @endphp
 
 <header class="header" header>
-  <div class="container">
-    <div class="row">
-      <div class="col header__wrapper">
-        <a class="header__brand" href="{{ home_url('/') }}">
-          <img src="@asset('/images/logo.png')" alt="Brusso">
-        </a>
-        </nav>
-      </div>
-    </div>
+  <div class="header__wrapper">
+    <a class="header__brand" href="{{ home_url('/') }}">
+      <img src="@asset('/images/logo.png')" alt="Brusso">
+    </a>
+    <nav class="header__nav">
+      @include('blocks.icon-nav')
+    </nav>
   </div>
 </header>
