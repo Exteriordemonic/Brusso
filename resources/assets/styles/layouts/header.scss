@@ -2,7 +2,7 @@
   @include cssLock("left", 360, 1920, (25, 100));
   @include cssLock("top", 360, 1920, (25, 40));
 
-  position: absolute;
+  position: fixed;
   padding: 0 $gutter;
   z-index: z-index("header");
 

@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__input-wrapper {
+    position: relative;
+    border-radius: $gutter * 5;
+    display: flex;
+    color: color("greyy");
+    border: 1px solid;
+    overflow: hidden;
+  }
+
+  &__input {
+    @extend .text;
+
+    @include cssLock("padding", 360, 1920, (12, 24));
+
+    border: 0;
+    color: color("greyy");
+    background-color: transparent !important;
+    width: 100%;
+  }
+
+  &__button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+}

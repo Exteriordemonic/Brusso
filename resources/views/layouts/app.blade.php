@@ -9,6 +9,7 @@
       <div class="content">
         <main class="main">
           @yield('content')
+          @include('partials.footer')
         </main>
         <aside class="sidebar">
           @include('partials.sidebar')
@@ -16,7 +17,7 @@
       </div>
     </div>
     @php do_action('get_footer') @endphp
-    @include('partials.footer')
+
     @php wp_footer() @endphp
   </body>
 </html>

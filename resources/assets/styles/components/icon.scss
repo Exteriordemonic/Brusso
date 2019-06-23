@@ -38,4 +38,11 @@
   &--special {
     background: color("special");
   }
+
+  &--dark-line {
+    &::before,
+    &::after {
+      background: color("dark");
+    }
+  }
 }
