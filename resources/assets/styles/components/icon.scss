@@ -31,6 +31,18 @@
     }
   }
 
+  &--x {
+    @extend .icon--plus;
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+
   &--dark {
     background: color("dark");
   }

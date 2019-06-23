@@ -12,6 +12,7 @@ import aboutUs from './routes/about';
 
 //Woocommerce
 import priceFormat from './woocommerce/price-format';
+import miniCard from './woocommerce/mini-card';
 
 //Components
 import gallery from './components/gallery';
@@ -34,6 +35,7 @@ jQuery(document).ready(() => {
   priceFormat.init();
   gallery.init();
   slider.init();
+  miniCard.init();
 });
 
 setTimeout(()=>{slider.resize()}, 3000);

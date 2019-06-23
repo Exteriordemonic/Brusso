@@ -5,6 +5,7 @@
     <div class="preloader" preloader ></div>
     @php do_action('get_header') @endphp
     @include('partials.header')
+    @include('partials.mini-cart')
     <div class="wrap" role="document">
       <div class="content">
         <main class="main">
