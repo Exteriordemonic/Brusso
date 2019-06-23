@@ -13,6 +13,10 @@ import aboutUs from './routes/about';
 //Woocommerce
 import priceFormat from './woocommerce/price-format';
 
+//Components
+import gallery from './components/gallery';
+import slider from './components/slider';
+
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -28,5 +32,11 @@ const routes = new Router({
 jQuery(document).ready(() => {
   routes.loadEvents();
   priceFormat.init();
+  gallery.init();
+  slider.init();
 });
+
+setTimeout(()=>{slider.resize()}, 3000);
+setTimeout(()=>{slider.resize()}, 5000);
+setInterval(()=>{slider.resize()}, 5000);
 

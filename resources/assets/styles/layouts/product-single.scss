@@ -1,5 +1,15 @@
 .product-single {
+  @include cssLock("margin-bottom", 360, 1920, (25, 50));
+
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 100vh;
+  grid-template-columns: repeat(1, 1fr);
+
+  @include media(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+  }
+
+  &__col {
+    min-height: 50vh;
+  }
 }

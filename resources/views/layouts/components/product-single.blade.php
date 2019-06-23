@@ -1,8 +1,14 @@
+@php
+    $product =  wc_get_product( get_the_ID() );
+@endphp
+
 <section class="product-single">
   <div class="product-single__col">
-    <h1>...Galeria</h1>
+    @include('blocks.product-gallery', ['product' => $product])
   </div>
   <div class="product-single__col">
-    @include('partials.product-details')
+    @include('partials.product-details', ['product' => $product])
   </div>
 </section>
+
+@include('layouts.components.builder')

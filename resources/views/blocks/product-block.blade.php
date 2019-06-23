@@ -1,22 +1,23 @@
 @php
-/** 
+/**
  * Name:
  * Product Block
- * 
- * Description: 
+ *
+ * Description:
  * Display block with some product information and let direct add to basket
- * 
+ *
  * Data:
  * Title
  * Price
  * Image
  * Permalink
  * Add to basket - Link
- * 
- * Storybook: /blocks/product-block 
+ *
+ * Storybook: /blocks/product-block
  * Styles: /blocks/product-block
- * */    
+ * */
     $product = wc_get_product( $product->ID );
+
     $title = $product->get_name();
     $price = $product->get_price();
     $image = $product->get_image_id();
@@ -34,9 +35,11 @@
         </span>
     </header>
     {!! image($image, 'full', 'product-block__image') !!}
+    @if (!$hideAdd)
     <footer class="product-block__footer">
         <a href="{{ $addToBasket }}">
             <span class="icon icon--plus icon--dark"></span>
         </a>
     </footer>
+    @endif
 </a>

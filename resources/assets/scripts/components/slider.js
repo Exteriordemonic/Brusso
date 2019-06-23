@@ -11,15 +11,17 @@ const Slider = {
         if(this.elem) {
             this.slider =  new Flickity( ELEM, {
                 pageDots: true,
-                prevNextButtons: false,
+                prevNextButtons: true,
             });
-    
+
             this.slider.resize();
         }
     },
 
     resize() {
         if(this.elem) {
+          console.log('resize');
+
             this.slider.resize();
         }
     },

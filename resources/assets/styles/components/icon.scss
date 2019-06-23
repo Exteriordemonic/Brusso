@@ -6,6 +6,7 @@
     display: block;
     border-radius: 100%;
     position: relative;
+    transition: $transition;
 
     &::before,
     &::after {
@@ -24,9 +25,17 @@
     &::after {
       transform: rotate(90deg);
     }
+
+    &:hover {
+      transform: rotate(180deg);
+    }
   }
 
   &--dark {
     background: color("dark");
+  }
+
+  &--special {
+    background: color("special");
   }
 }

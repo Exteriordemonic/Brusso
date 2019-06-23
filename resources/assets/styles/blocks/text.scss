@@ -1,0 +1,5 @@
+.text-block {
+  &__title {
+    @include cssLock("margin-bottom", 360, 1920, (25, 50));
+  }
+}

@@ -17,7 +17,7 @@
 }
 
 .subtitle {
-  @include cssLock("font-size", 360, 1920, (16, 24));
+  @include cssLock("font-size", 360, 1920, (14, 24));
 
   @extend %text;
 }

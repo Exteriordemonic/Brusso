@@ -1,5 +1,4 @@
 @php
-  $product =  wc_get_product( get_the_ID() );
   $categories = $product -> get_category_ids();
 
   $attributes = get_field('atrybuty');

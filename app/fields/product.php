@@ -13,8 +13,9 @@ $page
     ->addTab('Images',['placement' => 'left'])
         ->addImage('product-list', ['label'=>'Zdjęcie w asortymencie'])
     ->addTab('Atrybuty')
-    ->addRepeater('atrybuty')
-        ->addText('title', ['label'=> 'Nagłówek'])
-        ->addTextarea('desc', ['label'=> 'Opis', 'rows'=>'3'])
-    ->endRepeater();
+        ->addRepeater('atrybuty')
+            ->addText('title', ['label'=> 'Nagłówek'])
+            ->addTextarea('desc', ['label'=> 'Opis', 'rows'=>'3'])
+        ->endRepeater()
+    ->addFields(get_field_partial('partials.builder'));
 return $page;

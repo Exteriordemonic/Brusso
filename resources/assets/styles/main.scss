@@ -36,8 +36,10 @@
 @import "blocks/product.scss";
 @import "blocks/product-details.scss";
 @import "blocks/attributes.scss";
+@import "blocks/text.scss";
 
 /** Layouts */
+@import "layouts/section.scss";
 @import "layouts/hero.scss";
 @import "layouts/sidebar.scss";
 @import "layouts/navigation.scss";
@@ -45,6 +47,10 @@
 @import "layouts/shop.scss";
 @import "layouts/products.scss";
 @import "layouts/product-single.scss";
+@import "layouts/gallery.scss";
+@import "layouts/slider.scss";
+@import "layouts/flex.scss";
+@import "layouts/product-map.scss";
 
 /** Pages */
 @import "pages/home";

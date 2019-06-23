@@ -1,0 +1,51 @@
+.product-map {
+  $root: &;
+
+  @include cssLock("margin-top", 360, 1920, (25, 50));
+  @include cssLock("margin-bottom", 360, 1920, (25, 50));
+
+  position: relative;
+
+  &__button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    background: 0;
+    border-radius: 100%;
+    border: 0;
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover {
+      z-index: 100;
+
+      #{$root}__product {
+        opacity: 1;
+        pointer-events: initial;
+      }
+    }
+  }
+
+  &__product {
+    @include cssLock("top", 360, 1920, (24, 36));
+
+    position: absolute;
+    width: $gutter * 23;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition;
+    display: none;
+
+    @include media(md) {
+      display: initial;
+    }
+
+    &--left {
+      left: unset;
+      right: 0;
+    }
+  }
+}

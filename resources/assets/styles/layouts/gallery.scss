@@ -1,0 +1,29 @@
+.gallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__image {
+    @extend .absolute;
+    @extend .image;
+  }
+
+  &__zoom {
+    position: absolute;
+    z-index: 100;
+    border-radius: 100%;
+    box-shadow: 0 0 5px black;
+    width: $gutter * 10;
+    height: $gutter * 10;
+    opacity: 0;
+    transition: opacity $transition;
+    background: no-repeat scroll;
+    pointer-events: none;
+
+    &.-is-active {
+      opacity: 1;
+    }
+  }
+}
