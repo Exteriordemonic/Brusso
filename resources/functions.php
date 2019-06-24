@@ -109,7 +109,7 @@ if( function_exists('acf_add_options_page') ) {
 function the_breadcrumb() {
     $sep = '';
     if (!is_front_page()) {
-	
+
 	// Start the breadcrumb with a link to your homepage
         echo '<ul class="breadcramps">';
         echo '<li class="breadcramps__item body">';
@@ -119,10 +119,10 @@ function the_breadcrumb() {
         echo 'Strona główna';
         echo '</a>';
         echo '</li>';
-        
+
 	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
         if (is_category() ){
-           
+
             $cat = get_queried_object();
 
             if($cat -> category_parent == '0') {
@@ -145,7 +145,7 @@ function the_breadcrumb() {
                 echo '</li>';
             }
             //print_r( get_queried_object());
-           
+
         } elseif (is_archive() || is_single()){
             if(is_single()) {
                 if(get_post_type() == 'partnerzy'):
@@ -168,13 +168,13 @@ function the_breadcrumb() {
             }
 
             else {
-                echo '<li class="breadcramps__item body">';        
+                echo '<li class="breadcramps__item body">';
                 echo get_post_type_object(get_post_type())->label;
                 echo '</li>';
             }
-            
+
         }
-	
+
 	// If the current page is a single post, show its title with the separator
         if (is_single()) {
             echo '<li class="breadcramps__item body">';
@@ -182,9 +182,9 @@ function the_breadcrumb() {
             echo '</li>';
 
             //print_r(get_post_type_object(get_post_type())->label);
-           
+
         }
-	
+
 	// If the current page is a static page, show its title.
         if (is_page()) {
             $parent_id = get_page(get_the_ID())->post_parent;
@@ -204,12 +204,12 @@ function the_breadcrumb() {
             echo '</li>';
             //print_r($parent);
         }
-	
+
 	// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
         if (is_home()){
             global $post;
             $page_for_posts_id = get_option('page_for_posts');
-            if ( $page_for_posts_id ) { 
+            if ( $page_for_posts_id ) {
                 $post = get_page($page_for_posts_id);
                 setup_postdata($post);
                 echo '<li class="breadcramps__item body">';
@@ -243,14 +243,18 @@ function the_breadcrumb() {
 
 class Placeholder {
     function image() {
-        return "images/sofa-bg.jpg"; 
+        return "images/sofa-bg.jpg";
     }
 
     function title() {
-        return '<a href="/sofa">Sofa</a> place <br> in your home'; 
+        return '<a href="/sofa">Sofa</a> place <br> in your home';
     }
-} 
+}
 
 function image($id, $size, $class) {
     return wp_get_attachment_image($id, $size, false, ['class'=>$class]);
+}
+
+function woocommerce_cart_item_thumbnail() {
+   echo 'hello';
 }

@@ -1,10 +1,10 @@
 .mini-cart {
-  @include cssLock("padding-top", 360, 1920, (75, 150));
+  @include cssLock("padding-top", 360, 1920, (75, 100));
 
   background: color("light");
   position: fixed;
   height: 100vh;
-  right: -$gutter * 40;
+  right: -$gutter * 45;
   top: 0;
   z-index: z-index("mini-cart");
   transition: $transition * 2;

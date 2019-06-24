@@ -32,30 +32,31 @@
 @import "components/form";
 
 /** Blocks */
-@import "blocks/product-block.scss";
-@import "blocks/tags.scss";
-@import "blocks/product.scss";
-@import "blocks/product-details.scss";
-@import "blocks/attributes.scss";
-@import "blocks/text.scss";
-@import "blocks/icon-nav.scss";
-@import "blocks/mini-product.scss";
+@import "blocks/product-block";
+@import "blocks/tags";
+@import "blocks/product";
+@import "blocks/product-details";
+@import "blocks/attributes";
+@import "blocks/text";
+@import "blocks/icon-nav";
+@import "blocks/mini-product";
 
 /** Layouts */
-@import "layouts/section.scss";
-@import "layouts/hero.scss";
-@import "layouts/sidebar.scss";
-@import "layouts/navigation.scss";
-@import "layouts/header.scss";
-@import "layouts/shop.scss";
-@import "layouts/products.scss";
-@import "layouts/product-single.scss";
-@import "layouts/gallery.scss";
-@import "layouts/slider.scss";
-@import "layouts/flex.scss";
-@import "layouts/product-map.scss";
-@import "layouts/footer.scss";
-@import "layouts/mini-cart.scss";
+@import "layouts/section";
+@import "layouts/hero";
+@import "layouts/sidebar";
+@import "layouts/navigation";
+@import "layouts/header";
+@import "layouts/shop";
+@import "layouts/products";
+@import "layouts/product-single";
+@import "layouts/gallery";
+@import "layouts/slider";
+@import "layouts/flex";
+@import "layouts/product-map";
+@import "layouts/footer";
+@import "layouts/mini-cart";
 
 /** Pages */
 @import "pages/home";
+@import "pages/woocomerce-cart";

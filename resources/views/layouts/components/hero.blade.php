@@ -14,11 +14,16 @@
 
     $image = get_field('bg_image', 'term_'.  $cat_id )['ID'];
 
+    if(!$image) {
+      $image = get_post_thumbnail_id();
+      $header = get_the_title();
+    }
+
 @endphp
 
 
 
-<section class="hero">
+<section class="hero @if($small) hero__small @endif">
     <div class="container">
         <header class="hero__header">
             <h2 class="headline bold">

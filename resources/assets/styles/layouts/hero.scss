@@ -7,6 +7,10 @@
   justify-content: center;
   align-items: center;
 
+  &__small {
+    height: 40vh;
+  }
+
   &__header {
     margin-bottom: $gutter * 4;
     text-align: center;

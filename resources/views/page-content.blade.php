@@ -6,6 +6,7 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-single')
+    @include('layouts.components.hero', ['small'=>true])
+    {{ the_content() }}
   @endwhile
 @endsection
