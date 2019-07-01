@@ -19,6 +19,8 @@
     margin: 0;
 
     li {
+      @extend .text;
+
       @include cssLock("padding", 360, 1920, (12, 24));
 
       transition: $transition;

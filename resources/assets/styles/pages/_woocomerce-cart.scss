@@ -56,28 +56,6 @@
         }
       }
 
-      .woocommerce-message {
-        @extend .text;
-
-        @include cssLock("margin-bottom", 360, 1920, (25, 50));
-        @include cssLock("padding-top", 360, 1920, (12, 12));
-
-        background-color: transparent;
-        display: block;
-        border-top-color: #5add77;
-        color: color("greyy");
-
-        a {
-          @extend .bold;
-
-          color: color("special");
-        }
-
-        &::before {
-          display: none;
-        }
-      }
-
       .actions {
         .coupon {
           position: relative;
@@ -163,6 +141,29 @@
   }
 
   .footer {
+    display: none;
+  }
+}
+
+.woocommerce-message,
+.woocommerce-info {
+  @extend .text;
+
+  @include cssLock("margin-bottom", 360, 1920, (25, 50));
+  @include cssLock("padding-top", 360, 1920, (12, 12));
+
+  background-color: transparent;
+  display: block;
+  border-top-color: color("special");
+  color: color("greyy");
+
+  a {
+    @extend .bold;
+
+    color: color("special");
+  }
+
+  &::before {
     display: none;
   }
 }

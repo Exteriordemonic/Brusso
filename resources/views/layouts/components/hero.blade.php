@@ -23,12 +23,17 @@
 
 
 
-<section class="hero @if($small) hero__small @endif">
+<section class="hero hero--{{ $template }} @if($small) hero--small @endif">
     <div class="container">
         <header class="hero__header">
             <h2 class="headline bold">
                 {!! $header ? $header : $placeholder->title() !!}
             </h2>
+            @if ($template == 'post')
+                <button class="hero__button" data-scroll-to-post>
+                    <span class="icon icon--arrow-down icon--special"></span>
+                </button>
+            @endif
         </header>
         @if($products)
         <ul class="hero__products">
@@ -50,5 +55,9 @@
         {!! image($image, 'full', 'hero__image') !!}
     @else
         <img class="hero__image" src="@asset($placeholder->image())" alt="Brusso">
+    @endif
+
+    @if ($template == 'post')
+      <img class="hero__image hero__image--bg" src="@asset('images/inspiration.png')" alt="Brusso">
     @endif
 </section>

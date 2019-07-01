@@ -9,6 +9,13 @@
   z-index: z-index("mini-cart");
   transition: $transition * 2;
 
+  &::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
   &.-is-active {
     right: 0;
   }

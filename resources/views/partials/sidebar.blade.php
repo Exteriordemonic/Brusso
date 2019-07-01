@@ -2,20 +2,28 @@
   @if (has_nav_menu('primary_navigation'))
     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
   @endif
-    {{-- <ul class="list">
-        @php
-          $product_cats = get_terms( 'product_cat', ['hide_empty' => true, 'parent ' => 0,] );
-        @endphp
 
-        @foreach ( $product_cats as $cat )
+  <a class="navigation__newsletter text" href="#newsletter"  data-toggle-popup>
+    .newsletter
+  </a>
 
-          <li class="list__elem">
-              <a class="link subtitle" href="#">
-                  SOFY
-              </a>
-          </li>
+  @php
+      $socialMediaIcons = get_field('icons','options');
+  @endphp
 
-        @endforeach
+  @if($socialMediaIcons)
+  <ul class="navigation__social-media social-media">
+    @foreach ($socialMediaIcons as $icon)
+    <li class="social-media__elem">
+      <a href="{{ $icon['link'] }}">
+        <span class="{{ $icon['icon'] }}"></span>
+      </a>
+    </li>
+    @endforeach
+  </ul>
+  @endif
 
-    </ul> --}}
+  <p class="navigation__copyright text">
+    © Brusso / made by: <a href="mailto:kmirosz6@gmail.com">mirosz development</a>
+  </p>
 </nav>

@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+  @php
+    $section = get_field('components', 188);
+    $hero = $section[0];
+  @endphp
 
-  @if (!have_posts())
-    <div class="alert alert-warning">
-      {{ __('Sorry, no results were found.', 'sage') }}
-    </div>
-    {!! get_search_form(false) !!}
-  @endif
+  @php
+    $product_cats = get_terms( 'product_cat', ['hide_empty' => true, 'parent' => 0,] );
+  @endphp
 
-  @while (have_posts()) @php the_post() @endphp
-    @include('partials.content-'.get_post_type())
-  @endwhile
+  @foreach ( $product_cats as $cat )
+    @include('layouts.components.hero', ['cat' => $cat])
+  @endforeach
 
-  {!! get_the_posts_navigation() !!}
 @endsection

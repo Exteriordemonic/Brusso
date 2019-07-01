@@ -1,6 +1,9 @@
 const CONFIG = {
   ELEM: 'preloader',
-  CLASS: 'preloader--hide',
+  CLASS: {
+    hide: 'is-hidden',
+    active: 'is-active',
+  },
 };
 
 const preloader = {
@@ -14,7 +17,11 @@ const preloader = {
   },
 
   hide() {
-    this.elem.classList.add(this.class);
+    this.elem.classList.add(this.class.hide);
+  },
+
+  activ() {
+    this.elem.classList.add(this.class.active);
   },
 };
 

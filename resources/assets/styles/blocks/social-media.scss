@@ -1,0 +1,17 @@
+.social-media {
+  list-style: none;
+  padding: 0 0 0 ($gutter * 0.5);
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__elem {
+    transition: $transition;
+    padding: 0 ($gutter * 0.5);
+
+    &:hover {
+      color: color("special");
+    }
+  }
+}

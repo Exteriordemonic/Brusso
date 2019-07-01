@@ -1,6 +1,6 @@
 @php
     global $woocommerce;
-    $items = $woocommerce->cart->get_cart();
+    
 
     // foreach($items as $item => $values) {
     //     $_product =  wc_get_product( $values['data']->get_id());
@@ -8,9 +8,15 @@
     //     $price = get_post_meta($values['product_id'] , '_price', true);
     //     echo "  Price: ".$price."<br>";
     // }
+
+    if($_GET['remove_item']) {
+      WC()->cart->remove_cart_item($_GET['remove_item']);
+    }
+
+    $items = $woocommerce->cart->get_cart();
 @endphp
 
-<div class="mini-cart" data-mini-card>
+<div class="mini-cart" data-mini-card id="mini-card">
   <button class="mini-cart__close" data-close-mini-card>
     <span class="icon icon--x icon--dark"></span>
   </button>

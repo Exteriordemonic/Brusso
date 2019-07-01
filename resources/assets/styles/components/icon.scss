@@ -2,12 +2,13 @@
   @include cssLock("width", 360, 1440, (30, 50));
   @include cssLock("height", 360, 1440, (30, 50));
 
-  &--plus {
-    display: block;
-    border-radius: 100%;
-    position: relative;
-    transition: $transition;
+  display: block;
+  border-radius: 100%;
+  position: relative;
+  transition: $transition;
+  cursor: pointer;
 
+  &--plus {
     &::before,
     &::after {
       content: "";
@@ -43,6 +44,30 @@
     }
   }
 
+  &--arrow-down {
+    &::before {
+      content: "";
+      width: 30%;
+      height: 30%;
+      position: absolute;
+      border: 2px solid color("light");
+      border-left: 0;
+      border-top: 0;
+      top: 0;
+      left: 0;
+      bottom: 15%;
+      right: 0;
+      margin: auto;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      &::before {
+        animation: arrow-down ($transition * 3) ease-in-out both infinite;
+      }
+    }
+  }
+
   &--dark {
     background: color("dark");
   }
@@ -56,5 +81,21 @@
     &::after {
       background: color("dark");
     }
+  }
+}
+
+@keyframes arrow-down {
+  0% {
+    top: -$gutter;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: $gutter;
+    opacity: 0;
   }
 }

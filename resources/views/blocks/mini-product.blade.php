@@ -14,7 +14,7 @@
       {{ $product['quantity'] }} x <span data-price>{{ $_product->get_price() }}</span>
     </p>
   </a>
-  <a href="{{ wc_get_cart_remove_url( $product['key'] ) }}" class="mini-product__remove">
+  <a href="{{ wc_get_cart_remove_url( $product['key'] ) }}" class="mini-product__remove" remove-from-cart>
     <img src="@asset('images/remove.png')" alt="usuń z koszyka">
   </a>
 </div>

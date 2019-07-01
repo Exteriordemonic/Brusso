@@ -13,3 +13,14 @@
   object-fit: cover;
   object-position: center;
 }
+
+.overlay {
+  &::before {
+    @extend .absolute;
+
+    content: "";
+    background: color("dark");
+    z-index: 10;
+    opacity: 0.8;
+  }
+}

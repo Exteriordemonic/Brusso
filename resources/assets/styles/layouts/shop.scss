@@ -7,4 +7,13 @@
     @include cssLock("padding-top", 360, 1920, (10, 25));
     @include cssLock("margin-bottom", 360, 1920, (20, 50));
   }
+
+  &__content {
+    opacity: 1;
+    transition: $transition;
+
+    &.-is-loading {
+      opacity: 0;
+    }
+  }
 }

@@ -1,3 +1,7 @@
+.nav {
+  height: 70vh;
+}
+
 .list,
 .nav {
   list-style: none;
@@ -31,10 +35,15 @@
       pointer-events: none;
     }
 
-    &:hover {
+    &.current-menu-item,
+    &.current-product_cat-ancestor {
       &::before {
         transform: translateX(100%);
       }
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
 
     &--special {
@@ -49,6 +58,7 @@
 
       text-transform: uppercase;
       font-weight: inherit;
+      white-space: nowrap;
     }
 
     &.-is-active {

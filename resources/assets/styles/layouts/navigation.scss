@@ -1,3 +1,25 @@
 .navigation {
   color: color("dark");
+
+  &__newsletter {
+    @include cssLock("left", 360, 1920, (25, 100));
+    @include cssLock("bottom", 360, 1920, (12, 24));
+
+    position: fixed;
+  }
+
+  &__social-media {
+    @include cssLock("left", 360, 1920, (100, 200));
+    @include cssLock("bottom", 360, 1920, (10, 22));
+
+    position: fixed;
+  }
+
+  &__copyright {
+    @include cssLock("right", 360, 1920, (25, 100));
+    @include cssLock("bottom", 360, 1920, (12, 24));
+
+    position: fixed;
+    display: none;
+  }
 }

@@ -12,6 +12,10 @@
     overflow: hidden;
   }
 
+  &__checkbox-wrapper {
+    @include cssLock("margin-top", 360, 1920, (12, 24));
+  }
+
   &__input {
     @extend .text;
 

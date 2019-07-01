@@ -1,10 +1,12 @@
 .icon-nav {
   $root: &;
 
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
+  background-color: color("light");
+  border-radius: $gutter * 4.5;
 
   &__elem {
     padding: 0;
@@ -20,10 +22,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 100%;
+    border: 3px solid transparent;
 
     &--basket {
       background: color("dark");
       position: relative;
+      border-color: color("light");
 
       #{$root}__img {
         position: relative;

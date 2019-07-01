@@ -31,8 +31,10 @@ $navbar-light-toggler-icon-bg: none;
 
 $z-index: (
   sidebar: 100,
+  popup: 50,
   infobar: 200,
   header: 200,
+  mini-cart: 210,
+  sign-in-to-newsletter: 250,
   preloader: 300,
-  mini-cart: 210
 );

@@ -30,8 +30,9 @@
   <li class="tags__elem">
     <a
       href="{{ get_term_link($parent_id) }}"
-      class="tag {{ currentCategory($parent_id, 0) }}
-    ">
+      class="tag {{ currentCategory($parent_id, 0) }}"
+      data-tag-link
+   >
       {{ __('wszystkie', 'brusso') }}
     </a>
   </li>
@@ -39,7 +40,7 @@
   @if ($tags)
     @foreach ($tags as $tag)
     <li class="tags__elem">
-      <a href="{{ get_term_link($tag -> term_id) }}"
+      <a href="{{ get_term_link($tag -> term_id) }}" data-tag-link
         class="tag {{ currentCategory($tag -> term_id, $cat_id) }}">
         {{ $tag -> name }}
       </a>

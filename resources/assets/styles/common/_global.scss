@@ -52,3 +52,11 @@ img {
   overflow-y: scroll;
   background-color: rgba(color(greyy), 0.05);
 }
+
+.woocommerce-message {
+  display: none !important;
+
+  &:nth-last-child(1) {
+    display: block !important;
+  }
+}

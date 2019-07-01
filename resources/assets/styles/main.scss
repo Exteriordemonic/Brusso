@@ -40,6 +40,7 @@
 @import "blocks/text";
 @import "blocks/icon-nav";
 @import "blocks/mini-product";
+@import "blocks/social-media";
 
 /** Layouts */
 @import "layouts/section";
@@ -56,7 +57,15 @@
 @import "layouts/product-map";
 @import "layouts/footer";
 @import "layouts/mini-cart";
+@import "layouts/post-slider";
+@import "layouts/post-content";
+@import "layouts/preloader";
+@import "layouts/sign-in-to-newsletter";
 
 /** Pages */
 @import "pages/home";
 @import "pages/woocomerce-cart";
+@import "pages/woocommerce-checkout";
+@import "pages/my-account";
+@import "pages/insipration";
+@import "pages/single-post";

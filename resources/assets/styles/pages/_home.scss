@@ -14,16 +14,22 @@
 
   .navigation {
     color: color("light");
+
+    &__copyright {
+      display: initial;
+    }
   }
 
   .content {
-    height: auto;
-    display: initial;
+    display: block;
+    height: 100vh;
   }
 
   .main {
-    display: initial;
+    display: block;
     width: auto;
+    height: 100vh;
+    overflow: auto;
   }
 
   .hero {
@@ -33,6 +39,12 @@
   }
 
   .icon-nav {
+    background-color: transparent;
+
+    &__icon {
+      border-color: transparent;
+    }
+
     &__img {
       filter: invert(0);
     }

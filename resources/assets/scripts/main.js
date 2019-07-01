@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // import external dependencies
 import 'jquery';
 
@@ -13,10 +14,17 @@ import aboutUs from './routes/about';
 //Woocommerce
 import priceFormat from './woocommerce/price-format';
 import miniCard from './woocommerce/mini-card';
+import ajaxShop from './woocommerce/ajax-shop';
+import addToCart from './woocommerce/add-to-cart';
+import removeFromCart from './woocommerce/remove-from-cart';
 
 //Components
 import gallery from './components/gallery';
 import slider from './components/slider';
+import sliderPost from './components/slider-post';
+import preloader from './components/preloader';
+import popup from './components/popup';
+import footerForm from './components/footer-form';
 
 
 /** Populate Router instance with DOM routes */
@@ -31,14 +39,36 @@ const routes = new Router({
 
 // Load Events
 jQuery(document).ready(() => {
+  preloader.init();
   routes.loadEvents();
   priceFormat.init();
   gallery.init();
   slider.init();
+  sliderPost.init();
   miniCard.init();
+  popup.init();
+  footerForm.init();
+  ajaxShop.init();
+  addToCart.init();
+  removeFromCart.init();
 });
 
-setTimeout(()=>{slider.resize()}, 3000);
-setTimeout(()=>{slider.resize()}, 5000);
-setInterval(()=>{slider.resize()}, 5000);
+setTimeout(() => {
+  slider.resize();
+  sliderPost.resize();
+}, 1000);
+
+setTimeout(() => {
+  slider.resize();
+  sliderPost.resize();
+}, 5000);
+
+
+
+jQuery(document).ajaxComplete(function () {
+  if (jQuery('body').hasClass('woocommerce-checkout') || jQuery('body').hasClass('woocommerce-cart')) {
+    jQuery('html, body').stop();
+    console.log('test');
+  }
+});
 

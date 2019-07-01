@@ -25,7 +25,7 @@
     <span class="title bold" data-price>
       {{ $product -> get_price() }}
     </span>
-    <a class="button button--add" href="{{ $product->add_to_cart_url() }}">Kup teraz!</a>
+    <a data-add-to-basket class="button button--add" href="{{ $product->add_to_cart_url() }}">Kup teraz!</a>
   </footer>
 </div>
 

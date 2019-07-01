@@ -21,7 +21,10 @@
     @include cssLock("width", 360, 1920, (100, 200));
 
     display: block;
-    margin-left: $gutter;
+
+    @include media(md) {
+      margin-left: $gutter;
+    }
 
     img {
       max-width: 100%;
@@ -29,6 +32,8 @@
   }
 
   &__nav {
-    padding-right: $gutter;
+    @include media(md) {
+      padding-right: $gutter;
+    }
   }
 }

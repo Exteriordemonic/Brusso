@@ -37,7 +37,7 @@
     {!! image($image, 'full', 'product-block__image') !!}
     @if (!$hideAdd)
     <footer class="product-block__footer">
-        <a href="{{ $addToBasket }}">
+        <a href="{{ $addToBasket }}" data-add-to-basket>
             <span class="icon icon--plus icon--dark"></span>
         </a>
     </footer>

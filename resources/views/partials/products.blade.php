@@ -15,7 +15,7 @@
 @endphp
 
 @if($products)
-<ul class="products">
+<ul class="products" id="products">
   @foreach ($products as $product)
   <li>
     @include('blocks.product', ['product' => $product])
