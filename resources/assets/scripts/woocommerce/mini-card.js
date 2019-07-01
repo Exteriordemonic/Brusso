@@ -11,7 +11,7 @@ const CONFIG = {
 const miniCard = {
   init() {
     const { CLOSE, OPEN, ELEM, CLASS, CART } = CONFIG;
-    this.$close = document.querySelector(CLOSE);
+    this.$close = document.querySelectorAll(CLOSE);
     this.$open = document.querySelector(OPEN);
     this.$elem = document.querySelector(ELEM);
     this.$cart = document.querySelector(CART);
@@ -23,8 +23,10 @@ const miniCard = {
   },
 
   addEvent() {
-    this.$close.addEventListener('click', () => {
-      this.hide();
+    this.$close.forEach(element => {
+      element.addEventListener('click', () => {
+        this.hide();
+      });
     });
 
     this.$open.addEventListener('click', (event) => {
@@ -39,7 +41,7 @@ const miniCard = {
   },
 
   show() {
-    if(!this.$cart && this.countItems() !== 0) {
+    if (!this.$cart && this.countItems() !== 0) {
       this.$elem.classList.add(this.$class);
     }
   },

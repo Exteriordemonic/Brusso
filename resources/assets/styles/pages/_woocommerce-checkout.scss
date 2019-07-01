@@ -38,21 +38,21 @@
     button {
       @extend .subtitle;
       @extend .bold;
+      @extend .button;
 
-      @include cssLock("padding", 360, 1920, (12, 24));
+      @include cssLock("padding-top", 360, 1920, (12, 24));
+      @include cssLock("padding-bottom", 360, 1920, (12, 24));
+      @include cssLock("padding-left", 360, 1920, (24, 48));
+      @include cssLock("padding-right", 360, 1920, (24, 48));
 
-      background: transparent !important;
+      background: color("light") !important;
       color: color("special") !important;
       text-align: left;
       display: inline-block;
-      border: 0 !important;
-      padding-left: 0 !important;
-      float: left !important;
-      cursor: pointer;
 
       &:hover {
-        color: color("special") !important;
-        opacity: 0.6;
+        color: color("light") !important;
+        background: color("special") !important;
       }
     }
   }
