@@ -52,10 +52,6 @@ const ajaxShop = {
         this.$elem.load(`${link} ${ELEM.elements}`, function() {
             priceFormt.init();
 
-            history.pushState({
-                id: 'homepage',
-            }, 'Home | My App', link);
-
             $(this).removeClass(CLASS.loading);
         });
     },

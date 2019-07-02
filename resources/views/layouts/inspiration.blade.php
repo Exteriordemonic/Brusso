@@ -2,7 +2,6 @@
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
   <body @php body_class() @endphp style="overflow-x: hidden">
-    <div class="preloader" preloader ></div>
     @php do_action('get_header') @endphp
     @include('partials.preloader')
     @include('partials.header')
