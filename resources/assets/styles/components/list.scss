@@ -20,6 +20,7 @@
     position: relative;
     overflow: hidden;
     padding: 0 $gutter;
+    transition: $transition;
 
     &::before {
       content: "";
@@ -51,6 +52,10 @@
 
       color: color("special");
       font-weight: 600;
+    }
+
+    &--reverse {
+      color: color("dark");
     }
 
     a {

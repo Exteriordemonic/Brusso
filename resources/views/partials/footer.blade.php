@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" data-rev-nav>
   <div class="footer__header">
     <p class="headline bold">
       JOIN OUR
