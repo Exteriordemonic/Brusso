@@ -7,9 +7,12 @@
 
 <header class="header" header>
   <div class="header__wrapper">
-    <a class="header__brand" href="{{ home_url('/') }}">
-      <img src="@asset('/images/logo.png')" alt="Brusso">
-    </a>
+    <div class="header__left">
+      <a class="header__brand" href="{{ home_url('/') }}">
+        <img src="@asset('/images/logo.png')" alt="Brusso">
+      </a>
+      <button class="hamburger" data-toggle-menu></button>
+    </div> 
     <nav class="header__nav">
       @include('blocks.icon-nav')
     </nav>

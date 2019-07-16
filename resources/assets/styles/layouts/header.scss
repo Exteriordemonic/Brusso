@@ -17,8 +17,15 @@
     align-items: center;
   }
 
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__brand {
     @include cssLock("width", 360, 1920, (100, 200));
+    @include cssLock("padding-right", 360, 1920, (12, 25));
 
     display: block;
 

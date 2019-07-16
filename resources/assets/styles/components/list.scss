@@ -14,13 +14,20 @@
 
   &__elem,
   .menu-item {
-    @include cssLock("font-size", 360, 1440, (10, 30));
+    @include cssLock("font-size", 360, 767, (20, 24));
+    @include cssLock("line-height", 360, 767, (36, 46));
 
     display: inline-block;
     position: relative;
     overflow: hidden;
-    padding: 0 $gutter;
-    transition: $transition;
+    padding: 0;
+
+    @include media(xs) {
+      @include cssLock("font-size", 360, 1440, (10, 30));
+
+      line-height: initial;
+      padding: 0 $gutter;
+    }
 
     &::before {
       content: "";
@@ -58,11 +65,15 @@
     }
 
     a {
-      @extend .subtitle;
-
       text-transform: uppercase;
       font-weight: inherit;
       white-space: nowrap;
+
+      @include media(xs) {
+        @include cssLock("font-size", 360, 1920, (14, 24));
+
+        padding: 0 $gutter;
+      }
     }
 
     &.-is-active {

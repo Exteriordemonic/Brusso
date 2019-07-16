@@ -13,7 +13,7 @@
           @yield('content')
           @include('partials.footer')
         </main>
-        <aside class="sidebar">
+        <aside class="sidebar" data-nav>
           @include('partials.sidebar')
         </aside>
       </div>

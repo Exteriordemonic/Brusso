@@ -13,6 +13,14 @@
   z-index: z-index("sidebar");
   background: color("light");
 
+  &.-is-active {
+    background: color("light") !important;
+    background: color("dark") !important;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
   @include media(md) {
     display: inline-flex;
   }
