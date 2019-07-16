@@ -5,6 +5,7 @@ const CONFIG = {
     CLASS: {
         special: 'list__elem--special',
         reverse: 'list__elem--reverse',
+        home: 'home',
     },
 };
 
@@ -23,9 +24,11 @@ const Navigation = {
         //Values
         this.$revElemPosition;
         this.$class = CLASS;
+        this.$isHome = CLASS;
 
         //Set values
         this.setRevElemPosition();
+        this.isHome();
 
         //Functions on init 
         this.addEvents();
@@ -34,32 +37,43 @@ const Navigation = {
     addEvents() {
         console.log('events');
 
-        this.$scrollContainer.addEventListener('scroll', () => {
-
-            //Set values
-            this.setRevElemPosition();
-
-            const scrollTop = this.$scrollContainer.scrollTop;
-            const revPosVal = this.$revElemPosition - scrollTop;
-
-            console.log('Rev Elem Position', revPosVal);
-
-            this.$elements.forEach(element => {
-                const elementTop = element.offsetTop;
-
-                if (elementTop > revPosVal) {
-                    element.classList.add(this.$class.reverse);
-                }
-
-                else {
-                    element.classList.remove(this.$class.reverse);
-                }
-            });
-        })
+        if (this.$isHome) {
+            this.$scrollContainer.addEventListener('scroll', () => {
+                this.scrollController();
+            })
+        }
     },
 
+    // Events Controller
+    scrollController() {
+        //Set values
+        this.setRevElemPosition();
+
+        const scrollTop = this.$scrollContainer.scrollTop;
+        const revPosVal = this.$revElemPosition - scrollTop;
+
+        console.log('Rev Elem Position', revPosVal);
+
+        this.$elements.forEach(element => {
+            const elementTop = element.offsetTop;
+
+            if (elementTop > revPosVal) {
+                element.classList.add(this.$class.reverse);
+            }
+
+            else {
+                element.classList.remove(this.$class.reverse);
+            }
+        });
+    },
+
+    //Set Values
     setRevElemPosition() {
         this.$revElemPosition = this.$revElem.offsetTop;
+    },
+
+    isHome() {
+        this.$isHome = document.getElementsByClassName(this.$class.home).length;
     },
 };
 
