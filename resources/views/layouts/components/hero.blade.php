@@ -26,7 +26,7 @@
 <section class="hero hero--{{ $template }} @if($small) hero--small @endif">
     <div class="container">
         <header class="hero__header">
-            <h2 class="headline bold">
+            <h2 class="headline light">
                 {!! $header ? $header : $placeholder->title() !!}
             </h2>
             @if ($template == 'post')

@@ -12,9 +12,7 @@ const footerForm = {
         this.$elem = document.querySelector(ELEM);
         this.$email = document.querySelectorAll(EMAIL);
 
-        if(this.$elem) {
-          this.addEvent();
-        }
+        this.addEvent();
     },
 
     addEvent() {

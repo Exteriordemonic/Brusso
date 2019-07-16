@@ -125,21 +125,16 @@
       .checkout-button {
         @extend .subtitle;
         @extend .bold;
-        @extend .button;
 
-        @include cssLock("padding-top", 360, 1920, (12, 24));
-        @include cssLock("padding-bottom", 360, 1920, (12, 24));
-        @include cssLock("padding-left", 360, 1920, (24, 48));
-        @include cssLock("padding-right", 360, 1920, (24, 48));
+        @include cssLock("padding", 360, 1920, (12, 24));
 
-        background: color("light") !important;
-        color: color("special");
+        background: transparent !important;
+        color: color("dark");
         text-align: left;
         display: inline-block;
 
         &:hover {
-          color: color("light");
-          background: color("special") !important;
+          color: color("special");
         }
       }
     }
@@ -148,18 +143,10 @@
   .footer {
     display: none;
   }
-
-  .woocommerce-shipping-calculator {
-    select,
-    input {
-      @include cssLock("padding", 360, 1920, (6, 12));
-    }
-  }
 }
 
 .woocommerce-message,
-.woocommerce-info,
-.woocommerce-error {
+.woocommerce-info {
   @extend .text;
 
   @include cssLock("margin-bottom", 360, 1920, (25, 50));

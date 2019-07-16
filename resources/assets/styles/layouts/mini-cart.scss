@@ -9,27 +9,15 @@
   z-index: z-index("mini-cart");
   transition: $transition * 2;
 
-  &__before {
+  &::before {
     content: "";
     position: fixed;
-    width: 100vw;
-    left: 0;
+    width: 100%;
     height: 100%;
-    background: color("dark");
-    top: 0;
-    z-index: z-index("mini-cart") - 1;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.8s;
   }
 
   &.-is-active {
     right: 0;
-
-    & + .mini-cart__before {
-      pointer-events: initial;
-      opacity: 0.8;
-    }
   }
 
   &__products {
@@ -41,8 +29,6 @@
     max-width: 100%;
     height: 55vh;
     overflow-y: auto;
-    z-index: 10;
-    position: relative;
   }
 
   &__product {

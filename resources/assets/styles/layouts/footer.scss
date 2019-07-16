@@ -1,7 +1,7 @@
 .footer {
   @include cssLock("padding-top", 360, 1920, (50, 100));
 
-  background: color("special");
+  background: lighten(color("greyy"), 40%);
   text-align: center;
 
   &__header {

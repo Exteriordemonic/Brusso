@@ -4,8 +4,7 @@
 
 <div class="mini-product">
   <a href="{{ get_permalink($_product->get_id()) }}">
-    {!! image($_product->get_image_id(),'full', 'mini-product__image') !!}
-    {{-- <img class="mini-product__image" src="@asset('images/sofa00.png')" alt=""> --}}
+    <img class="mini-product__image" src="@asset('images/sofa00.png')" alt="">
   </a>
   <a href="{{ get_permalink($_product->get_id()) }}" class="mini-product__desciption">
     <h3 class="mini-product__title text bold">

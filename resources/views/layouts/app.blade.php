@@ -9,7 +9,7 @@
     @include('partials.mini-cart')
     <div class="wrap" role="document">
       <div class="content">
-        <main class="main">
+        <main class="main" data-main>
           @yield('content')
           @include('partials.footer')
         </main>

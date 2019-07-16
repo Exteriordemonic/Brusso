@@ -25,6 +25,7 @@ import sliderPost from './components/slider-post';
 import preloader from './components/preloader';
 import popup from './components/popup';
 import footerForm from './components/footer-form';
+import navigation from './components/navigation';
 
 
 /** Populate Router instance with DOM routes */
@@ -51,6 +52,7 @@ jQuery(document).ready(() => {
   ajaxShop.init();
   addToCart.init();
   removeFromCart.init();
+  navigation.init();
 });
 
 setTimeout(() => {

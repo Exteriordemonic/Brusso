@@ -27,10 +27,6 @@
     }
   }
 
-  &__image {
-    height: auto;
-  }
-
   &__remove {
     @include cssLock("padding", 360, 1920, (6, 12));
 
