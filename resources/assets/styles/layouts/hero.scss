@@ -47,9 +47,18 @@
 
     li {
       position: relative;
+      display: none;
 
       &:nth-child(2) {
         margin: 0 ($gutter * 3);
+      }
+
+      &:nth-child(1) {
+        display: block;
+      }
+
+      @include media("xs") {
+        display: initial;
       }
     }
   }
