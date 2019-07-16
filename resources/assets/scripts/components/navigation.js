@@ -17,7 +17,7 @@ const Navigation = {
 
         //Static elements
         this.$elem = document.querySelector(ELEM);
-        this.$elements = this.$elem.querySelectorAll('li');
+        this.$elements = this.$elem.querySelectorAll('li, a, ul, p');
         this.$scrollContainer = document.querySelector(CONTAINER);
         this.$revElem = document.querySelector(REV_ELEM);
 
@@ -57,7 +57,7 @@ const Navigation = {
         this.$elements.forEach(element => {
             const elementTop = element.offsetTop;
 
-            if (elementTop > revPosVal) {
+            if (elementTop + 10 > revPosVal) {
                 element.classList.add(this.$class.reverse);
             }
 
