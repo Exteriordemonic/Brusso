@@ -1,5 +1,9 @@
 .navigation {
-  color: color("dark");
+  color: color("light");
+
+  @include media(md) {
+    color: color("dark");
+  }
 
   &__newsletter {
     @include cssLock("left", 360, 1920, (25, 100));

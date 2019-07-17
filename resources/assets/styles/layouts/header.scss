@@ -21,6 +21,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: $gutter;
+    background: color("light");
+    border-radius: $gutter * 0.5;
+
+    @include media(md) {
+      margin-left: $gutter;
+      background: transparent;
+    }
   }
 
   &__brand {

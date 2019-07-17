@@ -21,6 +21,7 @@
     position: relative;
     overflow: hidden;
     padding: 0;
+    left: -$gutter;
 
     @include media(xs) {
       @include cssLock("font-size", 360, 1440, (10, 30));
@@ -68,6 +69,7 @@
       text-transform: uppercase;
       font-weight: inherit;
       white-space: nowrap;
+      padding: 0 $gutter;
 
       @include media(xs) {
         @include cssLock("font-size", 360, 1920, (14, 24));

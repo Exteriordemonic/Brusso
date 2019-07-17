@@ -3,6 +3,11 @@
     &__brand {
       filter: invert(1);
     }
+
+    &__left {
+      background: transparent;
+      padding: 0;
+    }
   }
 
   .hamburger {
