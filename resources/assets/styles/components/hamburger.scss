@@ -1,14 +1,16 @@
 %line {
+  @include cssLock("height", 360, 567, (3, 4));
+
   content: "";
   width: 100%;
-  height: $gutter * 0.5;
   background-color: color("dark");
   transition: $transition;
 }
 
 .hamburger {
-  width: $gutter * 4;
-  height: $gutter * 2;
+  @include cssLock("height", 360, 567, (15, 20));
+  @include cssLock("width", 360, 567, (20, 30));
+
   border: 0;
   position: relative;
   background: 0;

@@ -10,10 +10,13 @@
   }
 
   .sidebar {
-    background: transparent;
     padding-right: 0;
     margin: auto;
     position: fixed;
+
+    @include media(md) {
+      background: transparent;
+    }
   }
 
   .navigation {

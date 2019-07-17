@@ -7,21 +7,57 @@
   bottom: 0;
   left: 0;
   margin: 0;
-  display: none;
-  justify-content: center;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
   align-items: center;
   z-index: z-index("sidebar");
-  background: color("light");
+  background: color("dark");
+  transition: $transition;
+  animation: hideSidebar ($transition * 2) $transition linear both;
+
+  & > * {
+    animation: hideSidebar $transition linear both;
+  }
 
   &.-is-active {
-    background: color("light") !important;
-    background: color("dark") !important;
-    width: 100%;
-    display: flex;
     justify-content: flex-start;
+    animation: showSidebar $transition linear both;
+
+    & > * {
+      animation: showSidebar ($transition * 2) $transition linear both;
+    }
   }
 
   @include media(md) {
+    background: color("light");
+    justify-content: center;
     display: inline-flex;
+    animation: showSidebar $transition linear both !important;
+    width: auto;
+
+    & > * {
+      animation: showSidebar $transition linear both;
+    }
+  }
+}
+
+@keyframes showSidebar {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideSidebar {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
