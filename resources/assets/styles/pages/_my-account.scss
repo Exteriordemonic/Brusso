@@ -1,4 +1,5 @@
-.my-account {
+.my-account,
+.moje-konto {
   .main {
     .woocommerce {
       @include cssLock("padding", 360, 1920, (25, 50));
