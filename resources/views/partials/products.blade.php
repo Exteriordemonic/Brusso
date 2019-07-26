@@ -1,6 +1,7 @@
 @php
   $args = array(
     'post_type' => 'product',
+    'numberposts' => 999,
     'tax_query'             => array(
         array(
             'taxonomy'      => 'product_cat',
