@@ -41,7 +41,7 @@
     </div>
   </footer>
   <a class="mini-cart__checkout title bold" href="{{ $woocommerce->cart->get_checkout_url() }}">CHECKOUT</a>
-  <a class="mini-cart__to-card text" href="{{ wc_get_cart_url() }}">VIEW SHOPPING CART</a>
+  <a class="mini-cart__to-card text" href="{{ wc_get_cart_url() }}">Przejdź do koszyka</a>
 </div>
 
 

@@ -16,13 +16,36 @@
 
   &::before {
     content: "";
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
+    z-index: -1;
+    background-color: color("light");
+    pointer-events: none;
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    background: rgba(color("dark"), 0.6);
+    opacity: 0;
+    transition: $transition;
   }
 
   &.-is-active {
     right: 0;
+
+    &::after {
+      opacity: 1;
+    }
   }
 
   &__products {
@@ -87,7 +110,8 @@
     padding-top: 0;
     text-align: center;
     display: block;
-    font-weight: 400;
-    color: color("special");
+    font-weight: 600;
+    color: color("greyy");
+    text-transform: uppercase;
   }
 }
