@@ -5,20 +5,20 @@
   align-items: center;
 
   &__bg {
-    @extend .image;
-    @extend .absolute;
+    @extend %image;
+    @extend %absolute;
   }
 
   &__image {
-    @extend .image;
-    @extend .absolute;
+    @extend %image;
+    @extend %absolute;
 
     height: 90% !important;
     bottom: unset;
   }
 
   &__show-more {
-    @extend .absolute;
+    @extend %absolute;
 
     height: 90% !important;
     bottom: unset;

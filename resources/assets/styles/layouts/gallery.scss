@@ -6,8 +6,8 @@
   cursor: pointer;
 
   &__image {
-    @extend .absolute;
-    @extend .image;
+    @extend %absolute;
+    @extend %image;
   }
 
   &__zoom {

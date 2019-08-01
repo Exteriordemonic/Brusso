@@ -13,12 +13,23 @@
     max-width: $gutter * 45;
   }
 
-  &__attributes {
+  &__attributes,
+  &__colors {
     @include cssLock("margin-bottom", 360, 1920, (36, 72));
   }
 
   &__title {
-    @include cssLock("margin-bottom", 360, 1920, (12, 24));
+    @include cssLock("margin-bottom", 360, 1920, (24, 36));
+
+    position: relative;
+  }
+
+  &__attribute {
+    @include cssLock("bottom", 360, 1920, (-12, -18));
+
+    position: absolute;
+    left: 0;
+    color: color(greyy);
   }
 
   &__footer {

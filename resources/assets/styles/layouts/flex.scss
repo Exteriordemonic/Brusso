@@ -53,7 +53,7 @@
   }
 
   &__image {
-    @extend .image;
+    @extend %image;
 
     @include cssLock("margin-top", 360, 1920, (25, 50));
 

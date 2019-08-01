@@ -80,7 +80,7 @@
     padding: 0 !important;
 
     figure {
-      @extend .image;
+      @extend %image;
     }
 
     &:nth-child(1) {

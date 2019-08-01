@@ -1,7 +1,13 @@
 @php
   $categories = $product -> get_category_ids();
+  $main_product = get_field('main_product')[0];
 
-  $attributes = get_field('atrybuty');
+  $product_id_for_field = $main_product ? $main_product -> ID : get_the_ID();
+
+  $attributes = get_field('atrybuty', $product_id_for_field);
+  $color = get_field('color', $product_id_for_field)[0] -> post_title;
+
+  $colors = get_field('products', $product_id_for_field);
 @endphp
 
 <div class="product-details">
@@ -12,10 +18,20 @@
     <h1 class="product-details__title title bold">
       {{ $product -> get_title() }}
     </h1>
-    <p class="subtitle">
+    <p class="text">
       {{ $product -> get_description() }}
     </p>
   </div>
+
+  @if ($colors)
+  <div class="product-details__colors">
+    <h3 class="attributes__title text text--small bold">
+      {{ __('Wybierz kolor') }}
+    </h3>
+    @include('blocks.colors', ['colors' =>  $colors])
+  </div>
+  @endif
+
   @if ($attributes)
   <div class="product-details__attributes">
     @include('blocks.attributes', ['attributes' => $attributes])

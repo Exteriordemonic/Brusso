@@ -272,3 +272,70 @@ function wsis_dequeue_stylesandscripts_select2() {
 
     } 
 } 
+
+/*
+* Creating a function to create our CPT
+*/
+ 
+function custom_post_type() {
+ 
+    // Set UI labels for Custom Post Type
+        $labels = array(
+            'name'                => _x( 'Kolory', 'Post Type General Name', 'brusso' ),
+            'singular_name'       => _x( 'Kolory', 'Post Type Singular Name', 'brusso' ),
+            'menu_name'           => __( 'Kolory', 'brusso' ),
+            'parent_item_colon'   => __( 'Kolor główny', 'brusso' ),
+            'all_items'           => __( 'Wszystkie kolory', 'brusso' ),
+            'view_item'           => __( 'Zobacz kolor', 'brusso' ),
+            'add_new_item'        => __( 'Dodaj nowy kolor', 'brusso' ),
+            'add_new'             => __( 'Dodaj nowy', 'brusso' ),
+            'edit_item'           => __( 'Edytuj kolor', 'brusso' ),
+            'update_item'         => __( 'Zaktualizuj kolor', 'brusso' ),
+            'search_items'        => __( 'Szukaj koloru', 'brusso' ),
+            'not_found'           => __( 'Nie znaleziono', 'brusso' ),
+            'not_found_in_trash'  => __( 'Nie znaleziono w koszu', 'brusso' ),
+        );
+         
+    // Set other options for Custom Post Type
+         
+        $args = array(
+            'label'               => __( 'Kolory', 'brusso' ),
+            'description'         => __( 'Wszystkie kolory produktów', 'brusso' ),
+            'labels'              => $labels,
+            // Features this CPT supports in Post Editor
+            'supports'            => array( 'title', 'thumbnail'),
+            // You can associate this CPT with a taxonomy or custom taxonomy. 
+            'taxonomies'          => array( 'genres' ),
+            /* A hierarchical CPT is like Pages and can have
+            * Parent and child items. A non-hierarchical CPT
+            * is like Posts.
+            */ 
+            'hierarchical'        => false,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 55,
+            'can_export'          => true,
+            'has_archive'         => false,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'page',
+            'menu_icon'           => 'dashicons-art'
+        );
+         
+        // Registering your Custom Post Type
+        register_post_type( 'kolory', $args );
+     
+    }
+     
+    /* Hook into the 'init' action so that the function
+    * Containing our post type registration is not 
+    * unnecessarily executed. 
+    */
+     
+    add_action( 'init', 'custom_post_type', 0 );
+
+
+    add_image_size( 'color', 40, 40, true );

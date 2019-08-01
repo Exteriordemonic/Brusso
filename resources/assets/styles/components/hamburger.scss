@@ -22,7 +22,7 @@
   &::before,
   &::after {
     @extend %line;
-    @extend .absolute;
+    @extend %absolute;
   }
 
   &::before {

@@ -1,0 +1,17 @@
+$space: 2;
+
+.colors {
+  @extend %list;
+
+  @include cssLock("margin-left", 360, 1920, (-$space, -$space * 2));
+  @include cssLock("margin-right", 360, 1920, (-$space, -$space * 2));
+  @include cssLock("padding-top", 360, 1920, ($space, $space * 2));
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__elem {
+    @include cssLock("padding-left", 360, 1920, ($space, $space * 2));
+    @include cssLock("padding-right", 360, 1920, ($space, $space * 2));
+  }
+}

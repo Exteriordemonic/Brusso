@@ -32,7 +32,7 @@
     flex-wrap: wrap;
 
     &--img {
-      @extend .overlay;
+      @extend %overlay;
 
       display: none;
 
@@ -43,8 +43,8 @@
   }
 
   &__img {
-    @extend .absolute;
-    @extend .image;
+    @extend %absolute;
+    @extend %image;
 
     object-position: left;
   }

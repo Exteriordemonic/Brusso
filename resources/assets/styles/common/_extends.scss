@@ -1,4 +1,4 @@
-.absolute {
+%absolute {
   position: absolute;
   top: 0;
   left: 0;
@@ -7,20 +7,26 @@
   margin: auto;
 }
 
-.image {
+%image {
   width: 100%;
   height: 100% !important;
   object-fit: cover;
   object-position: center;
 }
 
-.overlay {
+%overlay {
   &::before {
-    @extend .absolute;
+    @extend %absolute;
 
     content: "";
     background: color("dark");
     z-index: 10;
     opacity: 0.8;
   }
+}
+
+%list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
