@@ -13,4 +13,8 @@
   &::before {
     display: none !important;
   }
+
+  &__elem {
+    position: relative;
+  }
 }

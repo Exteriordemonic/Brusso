@@ -1,8 +1,6 @@
-$size: 15;
-
 .color {
-  @include cssLock("width", 360, 1920, ($size, $size * 2));
-  @include cssLock("height", 360, 1920, ($size, $size * 2));
+  @include cssLock("width", 360, 1920, ($dot-size, $dot-size * 2));
+  @include cssLock("height", 360, 1920, ($dot-size, $dot-size * 2));
 
   display: block;
   border-radius: 100%;

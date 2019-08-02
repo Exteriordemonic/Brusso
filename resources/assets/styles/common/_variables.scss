@@ -5,7 +5,7 @@ $theme-colors: (
   light: #fff,
   dark: #000,
   greyy: #707070,
-  special: #fec400,
+  special: #fec400
 );
 
 $media: (
@@ -36,5 +36,9 @@ $z-index: (
   infobar: 200,
   header: 300,
   mini-cart: 310,
-  preloader: 400,
+  preloader: 400
 );
+
+$dot-size: 15;
+$space: 2;
+$dot-space: 2;

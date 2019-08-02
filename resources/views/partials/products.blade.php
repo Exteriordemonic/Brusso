@@ -18,8 +18,16 @@
 @if($products)
 <ul class="products" id="products">
   @foreach ($products as $product)
-  <li>
+
+  @php 
+    $main_product = get_field('main_product', $product->ID)[0];
+  @endphp
+
+  @if (!$main_product)
+  <li class="products__elem">
     @include('blocks.product', ['product' => $product])
+  </li>
+  @endif
   @endforeach
 </ul>
 @endif

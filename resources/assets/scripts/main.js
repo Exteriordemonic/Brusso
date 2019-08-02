@@ -17,6 +17,7 @@ import miniCard from './woocommerce/mini-card';
 import ajaxShop from './woocommerce/ajax-shop';
 import addToCart from './woocommerce/add-to-cart';
 import removeFromCart from './woocommerce/remove-from-cart';
+import shopColor from './woocommerce/shop-color';
 
 //Components
 import gallery from './components/gallery';
@@ -55,6 +56,7 @@ jQuery(document).ready(() => {
   removeFromCart.init();
   navigation.init();
   hamburger.init();
+  shopColor.init();
 });
 
 setTimeout(() => {
