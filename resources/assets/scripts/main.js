@@ -15,6 +15,7 @@ import aboutUs from './routes/about';
 import priceFormat from './woocommerce/price-format';
 import miniCard from './woocommerce/mini-card';
 import ajaxShop from './woocommerce/ajax-shop';
+import ajaxColor from './woocommerce/ajax-single-product-color';
 import addToCart from './woocommerce/add-to-cart';
 import removeFromCart from './woocommerce/remove-from-cart';
 import shopColor from './woocommerce/shop-color';
@@ -52,6 +53,7 @@ jQuery(document).ready(() => {
   popup.init();
   footerForm.init();
   ajaxShop.init();
+  ajaxColor.init();
   addToCart.init();
   removeFromCart.init();
   navigation.init();
