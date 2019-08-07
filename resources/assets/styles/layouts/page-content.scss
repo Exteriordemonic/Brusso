@@ -1,4 +1,4 @@
-.page-content {
+.page-template-page-default .page-content {
   @include cssLock("padding-left", 360, 1920, (25, 100));
   @include cssLock("padding-right", 360, 1920, (25, 100));
 

@@ -23,7 +23,7 @@ $image = get_field('product-list', $product->get_id())['ID'];
 $permalink = $product->get_permalink();
 $addToBasket = $product->add_to_cart_url();
 
-$colors = get_field('products', $product->ID);
+$colors = get_field('products', $id);
 @endphp
 
 <a class="product" href="{{ $permalink ? $permalink : '/' }}">

@@ -1,5 +1,6 @@
 import 'jquery';
 import priceFormt from './price-format'
+import shopColor from './shop-color'
 
 const CONFIG = {
     TRIGGER: '[data-tag-link]',
@@ -51,6 +52,7 @@ const ajaxShop = {
 
         this.$elem.load(`${link} ${ELEM.elements}`, function() {
             priceFormt.init();
+            shopColor.init();
 
             $(this).removeClass(CLASS.loading);
         });
