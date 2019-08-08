@@ -1,10 +1,12 @@
-<article class="dropdown">
+<article class="dropdown" data-dropdown={{ $index }}>
     <header class="dropdown__header">
       <div class="dropdown__header-wrapper">
         <h3 class="dropdown__title">Składanie zamówienia</h3>
         <p class="dropdown__description">W tej sekcji dowiesz się więcej o składaniu zmówień w naszym sklepie.</p>
       </div>
-      <div class="dropdown__icon"></div>
+      <div class="dropdown__icon">
+        <button class="icon icon--plus icon--special" data-toggle-button={{$index}}></button>
+      </div>
     </header>
     <ul class="dropdown__content">
         <li class="dropdown__elem">

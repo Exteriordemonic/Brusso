@@ -28,6 +28,7 @@ import popup from './components/popup';
 import footerForm from './components/footer-form';
 import navigation from './components/navigation';
 import hamburger from './components/hamburger';
+import dropdown from './components/dropdownMenu';
 
 
 /** Populate Router instance with DOM routes */
@@ -57,6 +58,7 @@ jQuery(document).ready(() => {
   navigation.init();
   hamburger.init();
   shopColor.init();
+  dropdown.init();
 });
 
 setTimeout(() => {

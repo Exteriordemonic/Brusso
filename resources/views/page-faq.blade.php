@@ -9,7 +9,10 @@
   <section class="section-faq">
     <ul class="section-faq__list">
       <li class="section-faq__elem">
-        @include('blocks.dropdown')
+        @include('blocks.dropdown', ['index'=>'01'])
+      </li>
+      <li class="section-faq__elem">
+        @include('blocks.dropdown', ['index'=>'02'])
       </li>
     </ul>
   </section>

@@ -1,4 +1,6 @@
 .dropdown {
+  $root: &;
+
   width: 100%;
 
   &__header {
@@ -11,13 +13,19 @@
     max-width: $gutter * 80;
     width: 80%;
     height: auto;
-    border-bottom: color(greyy) solid $gutter * 0.1;
     display: flex;
     flex-direction: column;
   }
 
   &__title {
     @extend .title;
+
+    @include cssLock(
+      "letter-spacing",
+      360,
+      1920,
+      ($gutter_num, $gutter_num * 0.15)
+    );
 
     color: color(special);
     font-weight: 600;
@@ -30,13 +38,13 @@
       "padding-bottom",
       360,
       1920,
-      ($gutter_num, $gutter_num * 1.5)
+      ($gutter_num, $gutter_num * 3.5)
     );
     @include cssLock(
       "padding-top",
       360,
       1920,
-      ($gutter_num, $gutter_num * 1.5)
+      ($gutter_num, $gutter_num * 0.5)
     );
 
     color: color(greyy);
@@ -44,15 +52,22 @@
   }
 
   &__icon {
-    width: 10%;
-    background-color: red;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__content {
     list-style-type: none;
-    width: 70%;
+    width: 62.5%;
     padding: 0;
-    height: auto;
+    max-height: 0;
+    border: none;
+    overflow: hidden;
+    transition: $transition;
+    border-top: transparent solid $gutter * 0.1;
+    opacity: 0;
   }
 
   &__elem {
@@ -60,7 +75,7 @@
       "padding-bottom",
       360,
       1920,
-      ($gutter_num, $gutter_num * 2)
+      ($gutter_num, $gutter_num * 4)
     );
 
     width: 100%;
@@ -76,7 +91,29 @@
       1920,
       ($gutter_num, $gutter_num * 2)
     );
+    @include cssLock(
+      "letter-spacing",
+      360,
+      1920,
+      ($gutter_num, $gutter_num * 0.1)
+    );
 
     font-weight: 600;
+  }
+
+  &__answear {
+    @extend .light;
+
+    @include cssLock("font-size", 360, 1920, (14, 20));
+
+    color: color(greyy);
+  }
+
+  &.-is-active {
+    #{$root}__content {
+      max-height: 100vh;
+      border-color: color(greyy);
+      opacity: 1;
+    }
   }
 }
