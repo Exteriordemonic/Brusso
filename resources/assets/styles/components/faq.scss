@@ -1,10 +1,5 @@
 .section-faq {
-  @include cssLock("padding-left", 360, 1920, (25, 50));
-  @include cssLock("padding-right", 360, 1920, (25, 50));
-  @include cssLock("padding-top", 360, 1920, (25, 13));
   @include cssLock("margin", 360, 1920, (25, 50));
-
-  background-color: color(light);
 
   &__list {
     list-style-type: none;

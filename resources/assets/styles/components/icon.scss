@@ -33,7 +33,7 @@
       transform: rotate(180deg);
     }
 
-    &.-is-open {
+    &.-is-active {
       &::before {
         transform: rotate(90deg);
       }

@@ -1,30 +1,42 @@
 const CONFIG = {
-    TRIGGER: '[data-dropdown]',
-    ELEM: '[data-toggle-button]',
-    CLASS: '-is-active',
+  TRIGGER: '[data-dropdown]',
+  ELEM: '[data-toggle-button]',
+  CLASS: '-is-active',
 };
 
 const dropdown = {
-    init(){
-        const { TRIGGER, ELEM } = CONFIG;
-        this.$trigger = document.querySelectorAll(TRIGGER);
-        this.$elem = document.querySelectorAll(ELEM);
-        this.addEvent();
-    },
+  init() {
+    const { TRIGGER, ELEM, CLASS } = CONFIG;
+    this.$elem = document.querySelectorAll(TRIGGER);
 
-    addEvent(){
-        const { CLASS } = CONFIG;
-        this.$trigger.addEventListener('click', (event) => {
-            const $this = event.currentTarget;
-            $this.classList.toggle(CLASS);
-            this.toggleElem(CLASS);
-           console.log('fap')
-        });
-    },
+    this.$button = ELEM;
+    this.$class = CLASS;
+    this.addEvent();
+  },
 
-    toggleElem(CLASS) {
-        this.$elem.classList.toggle(CLASS);
-    },
+  addEvent() {
+    this.$elem.forEach(element => {
+      element.addEventListener('click', (event) => {
+        const $this = event.currentTarget;
+        const button = $this.querySelector(this.$button);
+
+        button.classList.toggle(this.$class);
+        button.classList.toggle('icon--special');
+        $this.classList.toggle(this.$class);
+      });
+    });
+  },
+
+  hideAll() {
+    this.$elem.forEach(element => {
+      const $this = element;
+      const button = $this.querySelector(this.$button);
+
+      button.classList.remove(this.$class);
+      button.classList.remove('icon--special');
+      $this.classList.remove(this.$class);
+    });
+  },
 };
 
 export default dropdown;
