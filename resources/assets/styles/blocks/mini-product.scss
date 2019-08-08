@@ -8,6 +8,10 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
 
+  &__image {
+    height: auto;
+  }
+
   &__desciption {
     @include cssLock("padding", 360, 1920, (12, 24));
 
