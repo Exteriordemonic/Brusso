@@ -13,6 +13,11 @@
     $index = $loop->index;
 @endphp
 
-<a href={{$link}} class="color @if($active) -is-active @endif" data-color-index={{ $ID . '-' . $index}}>
-    {!! image($color_img, "color", "color__image") !!}
+<a
+  href={{$link}}
+  class="color @if($active) -is-active @endif"
+  @if(is_shop()) data-color-index={{ $ID . '-' . $index}} @endif
+  @if(is_product()) data-color-single-product @endif
+>
+  {!! image($color_img, "color", "color__image") !!}
 </a>
