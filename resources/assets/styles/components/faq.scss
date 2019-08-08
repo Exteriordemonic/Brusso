@@ -1,0 +1,9 @@
+.section-faq {
+  @include cssLock("margin", 360, 1920, (25, 50));
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
