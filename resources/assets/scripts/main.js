@@ -30,6 +30,7 @@ import footerForm from './components/footer-form';
 import navigation from './components/navigation';
 import hamburger from './components/hamburger';
 import dropdown from './components/dropdownMenu';
+import signInToNewsletter from './components/sign-in-to-newsletter';
 
 
 /** Populate Router instance with DOM routes */
@@ -61,6 +62,7 @@ jQuery(document).ready(() => {
   hamburger.init();
   shopColor.init();
   dropdown.init();
+  signInToNewsletter.init();
 });
 
 setTimeout(() => {
