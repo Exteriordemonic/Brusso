@@ -1,3 +1,5 @@
+//TO DO : PUT CLASS w8 when sending to let ppl is allerdy doing smh
+
 const CONFIG = {
   ELEM: '[data-sign-in-to-newsletter]',
   CLASS: {
