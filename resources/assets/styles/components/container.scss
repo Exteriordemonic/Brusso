@@ -1,0 +1,5 @@
+.container {
+  @include cssLock("max-width", 360, 1920, (300, 1000));
+
+  margin: 0 auto;
+}

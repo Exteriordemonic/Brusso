@@ -1,0 +1,115 @@
+.dropdown {
+  $root: &;
+
+  @include cssLock("padding", 360, 1920, (16, 32));
+  @include cssLock("margin-bottom", 360, 1920, (25, 50));
+
+  padding-bottom: 0;
+  background-color: color(light);
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__header-wrapper {
+    max-width: $gutter * 80;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @extend .title;
+
+    color: color(special);
+    font-weight: 600;
+  }
+
+  &__description {
+    @extend .subtitle;
+
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1920,
+      ($gutter_num, $gutter_num * 3.5)
+    );
+    @include cssLock(
+      "padding-top",
+      360,
+      1920,
+      ($gutter_num, $gutter_num * 0.5)
+    );
+
+    color: color(greyy);
+    align-items: flex-end;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__content {
+    list-style-type: none;
+    max-width: $gutter * 80;
+    width: 100%;
+    padding: 0;
+    max-height: 0;
+    border: none;
+    overflow: hidden;
+    transition: $transition;
+    border-top: transparent solid $gutter * 0.1;
+    opacity: 0;
+
+    @include media(sm) {
+      width: 80%;
+    }
+  }
+
+  &__elem {
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1920,
+      ($gutter_num, $gutter_num * 4)
+    );
+
+    width: 100%;
+  }
+
+  &__question {
+    @extend .subtitle;
+
+    @include cssLock("padding-top", 360, 1920, ($gutter_num, $gutter_num * 2));
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1920,
+      ($gutter_num, $gutter_num * 2)
+    );
+
+    font-weight: 600;
+  }
+
+  &__answear {
+    @extend .light;
+
+    @include cssLock("font-size", 360, 1920, (14, 20));
+
+    color: color(greyy);
+  }
+
+  &.-is-active {
+    #{$root}__content {
+      max-height: 100vh;
+      border-color: color(greyy);
+      opacity: 1;
+      transition: $transition * 2;
+    }
+  }
+}

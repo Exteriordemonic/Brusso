@@ -1,0 +1,64 @@
+.flex {
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+
+  @include media(sm) {
+    flex-direction: row;
+  }
+
+  &--reverse {
+    @include media(sm) {
+      flex-direction: row-reverse;
+    }
+
+    #{$root}__col {
+      &:first-child {
+        @include media(sm) {
+          @include cssLock("padding-left", 360, 1920, (25, 50));
+
+          padding-right: 0;
+        }
+      }
+
+      &:last-child {
+        @include media(sm) {
+          @include cssLock("padding-right", 360, 1920, (25, 50));
+
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  &__col {
+    width: 100%;
+
+    @include media(sm) {
+      width: 50%;
+    }
+
+    &:first-child {
+      @include media(sm) {
+        @include cssLock("padding-right", 360, 1920, (25, 50));
+      }
+    }
+
+    &:last-child {
+      @include media(sm) {
+        @include cssLock("padding-left", 360, 1920, (25, 50));
+      }
+    }
+  }
+
+  &__image {
+    @extend %image;
+
+    @include cssLock("margin-top", 360, 1920, (25, 50));
+
+    @include media(sm) {
+      margin-top: 0;
+    }
+  }
+}

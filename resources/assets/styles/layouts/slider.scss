@@ -1,0 +1,41 @@
+.slider {
+  width: 100%;
+  height: 50vh;
+
+  @include media(sm) {
+    height: 100%;
+  }
+
+  &__carousel {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    @extend %absolute;
+    @extend %image;
+  }
+
+  .flickity-viewport,
+  .carousel-cell {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .flickity-page-dots {
+    bottom: $gutter * 2;
+  }
+
+  .flickity-prev-next-button {
+    bottom: $gutter * 2;
+    background: 0;
+    top: unset;
+    width: $gutter * 4;
+    height: $gutter * 4;
+  }
+
+  .flickity-prev-next-button.previous {
+    left: unset;
+    right: $gutter * 4;
+  }
+}

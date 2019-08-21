@@ -1,0 +1,54 @@
+.header {
+  position: fixed;
+  z-index: z-index("header");
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  &__wrapper {
+    @include cssLock("padding-top", 360, 1920, (25, 40));
+    @include cssLock("padding-left", 360, 1920, (25, 100));
+    @include cssLock("padding-right", 360, 1920, (25, 100));
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $gutter;
+    background: color("light");
+    border-radius: $gutter * 0.5;
+
+    @include media(md) {
+      padding: 0;
+      background: transparent;
+    }
+  }
+
+  &__brand {
+    @include cssLock("width", 360, 1920, (100, 200));
+    @include cssLock("padding-right", 360, 1920, (12, 25));
+
+    display: block;
+
+    @include media(md) {
+      margin-left: $gutter;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__nav {
+    @include media(md) {
+      padding-right: $gutter;
+    }
+  }
+}

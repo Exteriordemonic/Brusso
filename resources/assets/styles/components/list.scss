@@ -1,0 +1,87 @@
+.nav {
+  height: 70vh;
+}
+
+.list,
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &__elem,
+  .menu-item {
+    @include cssLock("font-size", 360, 767, (20, 24));
+    @include cssLock("line-height", 360, 767, (36, 46));
+
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    left: -$gutter;
+
+    @include media(xs) {
+      @include cssLock("font-size", 360, 1440, (10, 30));
+
+      line-height: initial;
+      padding: 0 $gutter;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -105%;
+      bottom: 0;
+      top: 10%;
+      margin: auto;
+      width: 105%;
+      height: 1px;
+      border-bottom: solid 3px;
+      pointer-events: none;
+    }
+
+    &.current-menu-item,
+    &.current-product_cat-ancestor {
+      &::before {
+        transform: translateX(100%);
+      }
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &--special {
+      @include cssLock("letter-spacing", 360, 1920, (1, 2));
+
+      color: color("special");
+      font-weight: 600;
+    }
+
+    &--reverse {
+      color: color("dark");
+    }
+
+    a {
+      text-transform: uppercase;
+      font-weight: inherit;
+      white-space: nowrap;
+      padding: 0 $gutter;
+
+      @include media(xs) {
+        @include cssLock("font-size", 360, 1920, (14, 24));
+      }
+    }
+
+    &.-is-active {
+      opacity: 0.2;
+
+      &::before {
+        transform: translateX(100%);
+      }
+    }
+  }
+}

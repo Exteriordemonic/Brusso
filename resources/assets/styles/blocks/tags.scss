@@ -1,0 +1,17 @@
+.tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @include cssLock("margin-right", 360, 1920, (-6, -12));
+  @include cssLock("margin-left", 360, 1920, (-6, -12));
+  @include cssLock("margin-bottom", 360, 1920, (-6, -12));
+
+  &__elem {
+    @include cssLock("margin-right", 360, 1920, (6, 12));
+    @include cssLock("margin-left", 360, 1920, (6, 12));
+    @include cssLock("margin-bottom", 360, 1920, (6, 12));
+  }
+}

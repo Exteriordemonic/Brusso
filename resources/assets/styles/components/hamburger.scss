@@ -1,0 +1,51 @@
+%line {
+  @include cssLock("height", 360, 567, (3, 4));
+
+  content: "";
+  width: 100%;
+  background-color: color("dark");
+  transition: $transition;
+}
+
+.hamburger {
+  @include cssLock("height", 360, 567, (15, 20));
+  @include cssLock("width", 360, 567, (20, 30));
+
+  border: 0;
+  position: relative;
+  background: 0;
+
+  @include media(xs) {
+    display: none;
+  }
+
+  &::before,
+  &::after {
+    @extend %line;
+    @extend %absolute;
+  }
+
+  &::before {
+    bottom: 50%;
+  }
+
+  &::after {
+    top: 50%;
+    width: 70%;
+    right: 50%;
+  }
+
+  &.-is-active {
+    &::before {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      top: 0;
+      width: 100%;
+      right: 0;
+      transform: rotate(45deg);
+    }
+  }
+}

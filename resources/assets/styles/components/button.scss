@@ -1,0 +1,28 @@
+.button.button.button {
+  @include cssLock("padding-top", 360, 1920, (12, 24));
+  @include cssLock("padding-bottom", 360, 1920, (12, 24));
+  @include cssLock("padding-left", 360, 1920, (24, 48));
+  @include cssLock("padding-right", 360, 1920, (24, 48));
+
+  display: inline-block;
+  border-radius: 0;
+  background-color: color("light");
+  border: 2px solid color("special");
+  color: color("special");
+  letter-spacing: $gutter * 0.2;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background-color: color("special");
+    color: color("light");
+  }
+
+  &--icon {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 100%;
+  }
+}

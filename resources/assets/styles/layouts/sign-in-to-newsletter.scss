@@ -1,0 +1,79 @@
+.sign-in-to-newsletter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: color("light");
+  z-index: z-index("sign-in-to-newsletter");
+  pointer-events: none;
+  opacity: 0;
+  transition: $transition;
+
+  &.-is-active {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  @include media("sm") {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__cell {
+    @include cssLock("padding-left", 360, 1920, (25, 100));
+    @include cssLock("padding-right", 360, 1920, (25, 100));
+
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &--img {
+      @extend %overlay;
+
+      display: none;
+
+      @include media("sm") {
+        display: initial;
+      }
+    }
+  }
+
+  &__img {
+    @extend %absolute;
+    @extend %image;
+
+    object-position: left;
+  }
+
+  &__title {
+    @include cssLock("margin-bottom", 360, 1920, (25, 50));
+  }
+
+  &__text {
+    @include cssLock("margin-bottom", 360, 1920, (50, 100));
+  }
+
+  &__form {
+    @include cssLock("margin-bottom", 360, 1920, (50, 100));
+
+    display: inline-block;
+    flex-wrap: wrap;
+  }
+
+  &__button {
+    display: block;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: $transition;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

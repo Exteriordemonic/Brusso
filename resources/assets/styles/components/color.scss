@@ -1,0 +1,13 @@
+.color {
+  @include cssLock("width", 360, 1920, ($dot-size, $dot-size * 2));
+  @include cssLock("height", 360, 1920, ($dot-size, $dot-size * 2));
+
+  display: block;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 2px solid transparent;
+
+  &.-is-active {
+    border-color: color(greyy);
+  }
+}

@@ -1,0 +1,40 @@
+.product-details {
+  @include cssLock("padding-top", 360, 1920, (50, 100));
+  @include cssLock("padding-left", 360, 1920, (25, 50));
+  @include cssLock("padding-right", 360, 1920, (25, 50));
+
+  &__header {
+    margin-bottom: 0;
+  }
+
+  &__description {
+    @include cssLock("margin-bottom", 360, 1920, (24, 48));
+
+    max-width: $gutter * 45;
+  }
+
+  &__attributes,
+  &__colors {
+    @include cssLock("margin-bottom", 360, 1920, (36, 72));
+  }
+
+  &__title {
+    @include cssLock("margin-bottom", 360, 1920, (24, 36));
+
+    position: relative;
+  }
+
+  &__attribute {
+    @include cssLock("bottom", 360, 1920, (-12, -18));
+
+    position: absolute;
+    left: 0;
+    color: color(greyy);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,83 @@
+.preloader {
+  $root: &;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: z-index("preloader");
+  background-color: color("light");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    display: none;
+    width: $gutter * 26;
+    animation: show_img 0.4s ease-in 0.4s 1 both;
+  }
+
+  &.is-hidden {
+    pointer-events: none;
+    animation: hide__preloader 0.4s ease-in 0.5s both;
+
+    #{$root}__img {
+      animation: hide__img 0.4s ease-in both;
+    }
+  }
+
+  &.is-active {
+    pointer-events: initial;
+    animation: show__preloader 0.4s ease-in 0.5s both;
+  }
+}
+
+.home .preloader .preloader__img {
+  display: initial;
+}
+
+@keyframes show_img {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide__img {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes show__preloader {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide__preloader {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

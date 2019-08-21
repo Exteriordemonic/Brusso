@@ -1,0 +1,69 @@
+.sidebar {
+  @include cssLock("padding-left", 360, 1920, (25, 100));
+  @include cssLock("padding-right", 360, 1920, (25, 100));
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: z-index("sidebar");
+  background: color("dark");
+  color: color("light");
+  transition: $transition;
+  animation: hideSidebar ($transition * 2) $transition linear both;
+  pointer-events: none;
+
+  & > * {
+    animation: hideSidebar $transition linear both;
+  }
+
+  &.-is-active {
+    justify-content: flex-start;
+    animation: showSidebar $transition linear both;
+    pointer-events: initial;
+
+    & > * {
+      animation: showSidebar ($transition * 2) $transition linear both;
+    }
+  }
+
+  @include media(md) {
+    position: relative;
+    background: color("light");
+    justify-content: center;
+    display: inline-flex;
+    animation: showSidebar $transition linear both !important;
+    width: auto;
+    color: color("dark");
+    pointer-events: initial;
+
+    & > * {
+      animation: showSidebar $transition linear both;
+    }
+  }
+}
+
+@keyframes showSidebar {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideSidebar {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

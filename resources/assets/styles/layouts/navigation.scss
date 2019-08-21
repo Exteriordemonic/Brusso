@@ -1,0 +1,44 @@
+.navigation {
+  color: color("light");
+
+  @include media(md) {
+    color: color("dark");
+  }
+
+  &__newsletter {
+    @include cssLock("left", 360, 1920, (25, 100));
+    @include cssLock("bottom", 360, 1920, (12, 24));
+    @include cssLock("margin-bottom", 360, 1920, (24, 12));
+
+    position: fixed;
+
+    @include media(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social-media {
+    @include cssLock("left", 360, 1920, (100, 200));
+    @include cssLock("bottom", 360, 1920, (10, 22));
+    @include cssLock("margin-bottom", 360, 1920, (24, 12));
+
+    position: fixed;
+
+    @include media(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright {
+    @include cssLock("right", 360, 1920, (25, 100));
+    @include cssLock("bottom", 360, 1920, (12, 24));
+    @include cssLock("left", 360, 1920, (25, 100));
+
+    position: fixed;
+    display: none;
+
+    @include media(md) {
+      left: unset;
+    }
+  }
+}
