@@ -24,6 +24,12 @@
     </p>
   </div>
 
+  @if ($attributes)
+  <div class="product-details__attributes">
+    @include('blocks.attributes', ['attributes' => $attributes])
+  </div>
+  @endif
+
   @if ($colors)
   <div class="product-details__colors">
     <h3 class="attributes__title text text--small bold">
@@ -32,13 +38,6 @@
     @include('blocks.colors', ['colors' =>  $colors])
   </div>
   @endif
-
-  @if ($attributes)
-  <div class="product-details__attributes">
-    @include('blocks.attributes', ['attributes' => $attributes])
-  </div>
-  @endif
-
 
 <?php
 

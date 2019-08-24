@@ -357,3 +357,12 @@ function wpa83367_price_html( $price, $product ){
     $cenaFinal = explode(",", $cena);
     return '<span class="title bold" data-price="">'.$cenaFinal[0].'<span class="subtitle bold">.'.$cenaFinal[1].'</span></span>';
 }
+
+add_filter( 'add_to_cart_text', 'woo_custom_single_add_to_cart_text' );                // < 2.1
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_single_add_to_cart_text' );  // 2.1 +
+
+function woo_custom_single_add_to_cart_text() {
+
+    return __( 'Kup Teraz!', 'woocommerce' );
+
+}

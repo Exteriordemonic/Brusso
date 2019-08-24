@@ -5,7 +5,7 @@ const CONFIG = {
   OPEN: '[data-open-mini-card]',
   ELEM: '[data-mini-card]',
   CLASS: '-is-active',
-  CART: '.cart',
+  CART: 'body.cart',
 };
 
 const miniCard = {
@@ -36,6 +36,7 @@ const miniCard = {
 
   hide() {
     this.$elem.classList.toggle(this.$class);
+    console.log('hide');
   },
 
   show() {

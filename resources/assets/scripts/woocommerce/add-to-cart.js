@@ -3,47 +3,50 @@ import 'jquery';
 
 
 const CONFIG = {
-    ELEM: '[data-add-to-basket]',
-    QAN: '[data-basket-count]',
+  ELEM: '[data-add-to-basket]',
+  QAN: '[data-basket-count]',
+  VARBTN: '.single_variation_wrap button.single_add_to_cart_button',
 };
-  
+
 const addToCart = {
-    init() {
-        const { ELEM, QAN } = CONFIG;
-        
-        this.$elem = document.querySelectorAll(ELEM);
-        this.$qan = document.querySelector(QAN);
-        console.log(this.$elem);
-        this.addEvent();
-        this.$allow = true;
-    },
+  init() {
+    const { ELEM, QAN, VARBTN } = CONFIG;
 
-    addEvent() {
-        this.$elem.forEach((element) => {
-            element.addEventListener('click', (event) => {
-                event.preventDefault();
+    this.$elem = document.querySelectorAll(ELEM);
+    this.$varBtn = document.querySelectorAll(VARBTN);
+    this.$qan = document.querySelector(QAN);
 
-                if(this.$allow) {
-                    this.$allow = false;
-                    const link = element.getAttribute('href');
-                    
-                    this.loadBasket(element, link);
-                }
-            });
-        });
-    },
+    this.addEvent();
+    this.$allow = true;
+  },
 
-    loadBasket(link) {
-        const $this = this;
-        $('#mini-card').load(`${link} #mini-card > *`, function() {
-            miniCart.init();
-            miniCart.show();
+  addEvent() {
+    this.$elem.forEach((element) => {
+      element.addEventListener('click', (event) => {
+        event.preventDefault();
 
-            $this.$allow = true;
+        if (this.$allow) {
+          this.$allow = false;
+          const link = element.getAttribute('href');
 
-            $('#basket-count').load(`${window.location.href} #basket-count > *`);
-        });
-    },
+          this.loadBasket(element, link);
+        }
+      });
+    });
+  },
+
+  loadBasket(link) {
+    const $this = this;
+    $('#mini-card').load(`${link} #mini-card > *`, function () {
+      $('#basket-count').load(`${window.location.href} #basket-count > *`);
+
+      miniCart.init();
+      miniCart.show();
+
+      $this.$allow = true;
+
+    });
+  },
 };
 
 export default addToCart;

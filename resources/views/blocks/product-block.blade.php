@@ -21,25 +21,26 @@
     $title = $product->get_name();
     $price = $product->get_price();
     $image = $product->get_image_id();
+    $type = $product->get_type();
     $permalink = $product->get_permalink();
     $addToBasket = $product->add_to_cart_url();
 @endphp
 
 <a class="product-block" href="{{ $permalink ? $permalink : '/' }}">
     <header class="product-block__header">
-        <h3 class="product-block__title subtitle light">
-            {{ $title ? $title : 'Title' }}
-        </h3>
-        <span class="title bold" data-price>
-            {!! $price ? $price : '-' !!}
-        </span>
+      <h3 class="product-block__title subtitle light">
+        {{ $title ? $title : 'Title' }}
+      </h3>
+      <span class="title bold" data-price>
+        {!! $price ? $price : '-' !!}
+      </span>
     </header>
     {!! image($image, 'full', 'product-block__image') !!}
     @if (!$hideAdd)
     <footer class="product-block__footer">
-        <a href="{{ $addToBasket }}" data-add-to-basket>
-            <span class="icon icon--plus icon--dark"></span>
-        </a>
+      <a href="{{ $addToBasket }}" @if($type == 'simple') data-add-to-basket @endif>
+        <span class="icon icon--plus icon--dark"></span>
+      </a>
     </footer>
     @endif
 </a>

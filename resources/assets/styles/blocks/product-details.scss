@@ -8,14 +8,17 @@
   }
 
   &__description {
-    @include cssLock("margin-bottom", 360, 1920, (24, 48));
+    @include cssLock("margin-bottom", 360, 1920, (12, 24));
 
     max-width: $gutter * 45;
   }
 
-  &__attributes,
+  &__attributes {
+    @include cssLock("margin-bottom", 360, 1920, (24, 48));
+  }
+
   &__colors {
-    @include cssLock("margin-bottom", 360, 1920, (36, 72));
+    @include cssLock("margin-bottom", 360, 1920, (12, 24));
   }
 
   &__title {
@@ -36,5 +39,55 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  /* WC Classes */
+
+  .single_variation_wrap {
+    display: flex;
+    justify-content: space-between;
+
+    button.single_add_to_cart_button {
+      @extend .button;
+    }
+  }
+
+  .variations {
+    @include cssLock("margin-bottom", 360, 1920, (24, 36));
+
+    width: 100%;
+
+    tbody {
+      @include cssLock("grid-gap", 360, 1920, (12, 24));
+
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+
+      @include media(xs) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    tr {
+      display: flex;
+      flex-direction: column;
+    }
+
+    select {
+      padding: $gutter;
+      width: 100%;
+    }
+
+    label {
+      @extend .attributes__title;
+      @extend .text;
+      @extend .text--small;
+      @extend .bold;
+
+      display: block;
+    }
   }
 }

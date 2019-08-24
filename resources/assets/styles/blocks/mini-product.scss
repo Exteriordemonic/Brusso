@@ -15,12 +15,16 @@
   &__desciption {
     @include cssLock("padding", 360, 1920, (12, 24));
 
+    padding-right: $gutter * 2.5;
     padding-left: 0;
-    padding-right: 0;
   }
 
   &__title {
     @include cssLock("margin-bottom", 360, 1920, (6, 12));
+
+    span {
+      display: none;
+    }
   }
 
   &__price {

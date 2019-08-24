@@ -8,7 +8,7 @@
   </a>
   <a href="{{ get_permalink($_product->get_id()) }}" class="mini-product__desciption">
     <h3 class="mini-product__title text bold">
-      {{ $_product->get_title() }}
+      {!! $_product->get_formatted_name() !!}
     </h3>
     <p class="mini-product__price text">
       {{ $product['quantity'] }} x <span data-price>{{ $_product->get_price() }}</span>

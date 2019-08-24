@@ -1,4 +1,4 @@
-.button.button.button {
+.button.button.button.button.button {
   @include cssLock("padding-top", 360, 1920, (12, 24));
   @include cssLock("padding-bottom", 360, 1920, (12, 24));
   @include cssLock("padding-left", 360, 1920, (24, 48));

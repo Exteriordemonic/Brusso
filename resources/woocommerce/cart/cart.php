@@ -18,7 +18,6 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
-
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
@@ -70,7 +69,14 @@ do_action( 'woocommerce_before_cart' ); ?>
 						// }
                         ?>
                         <?php $thumbnail = get_field('product-list',  $_product->get_id())['ID'] ;?>
+
+                        <?php if($thumbnail) :?>
                         <?= image($thumbnail, 'medium', ''); ?>
+                        <?php else: ?>
+                        <?php $thumbnail = get_field('product-list',  $_product->get_parent_id())['ID'] ;?>
+                        <?= image($thumbnail, 'medium', ''); ?>
+                        <?php endif;?>
+
 						</td>
 
 						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
