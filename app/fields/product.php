@@ -15,6 +15,7 @@ $page
         ->addRelationship('main_product', ['label'=>'Główny produkt', 'post_type'=>'product', 'max'=>1])
     ->addTab('Atrybuty')
         ->addRelationship('color', ['label'=>'Kolor', 'post_type'=>'kolory', 'max'=>1])
+        ->addFile('pdf', ['label'=>'Paleta kolorów'])
         ->addRepeater('atrybuty')
             ->addText('title', ['label'=> 'Nagłówek'])
             ->addTextarea('desc', ['label'=> 'Opis', 'rows'=>'3'])

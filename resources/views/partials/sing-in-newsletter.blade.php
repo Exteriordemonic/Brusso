@@ -5,16 +5,12 @@
     <div class="sign-in-to-newsletter__cell">
         <div class="sign-in-to-newsletter__wrapper">
             <h2 class="sign-in-to-newsletter__title title">
-                <span class="bold">Subscribe</span>
+                <span class="bold">Join</span>
                 <br>
-                to our newsletter
+                our Newsletter
             </h2>
             <p class="sign-in-to-newsletter__text subtitle">
-                Subscribe to our newsletter to get your weekly dose of content dirsct into your mailbox.
-                <br>
-                <span class="text text--special bold">
-                    Get also -10% code.
-                </span>
+              Mamy dla Was ciekawe informacje o stylu skandynawskim
             </p>
             <form class="sign-in-to-newsletter__form form" action="https://app.mailerlite.com/webforms/submit/g0m3x2" data-code="g0m3x2" method="post" target="_blank" data-sign-in-to-newsletter>
                 <div class="form__input-wrapper">
@@ -37,13 +33,13 @@
                     </label>
                 </div>
                 <p class="form__alert form__alert--succes">
-                    Thank you for subscribe
+                    Dziękujemy za zapisanie się do Newsslettera
                 </p>
                 <p class="form__alert form__alert--fail">
-                  Something goes wrong contact us on 
+                  Coś poszło nie tak, skontaktuj się z nami pod adresem
                   <a href="mailto:newsletter@brusso.pl">
                     newsletter@brusso.pl
-                  </a> 
+                  </a>
                 </p>
             </form>
             <button class="sign-in-to-newsletter__button text bold" data-toggle-popup>

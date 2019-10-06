@@ -14,5 +14,5 @@ $dropdown
         ->endGroup()
         ->addRepeater('questions')
             ->addTextarea('title')
-            ->addTextarea('content');
+            ->addTextarea('content', ['new_lines'=>'br']);
 return $dropdown;

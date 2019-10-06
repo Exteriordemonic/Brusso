@@ -22,46 +22,47 @@ const SignInToNewsletter = {
   },
 
   addEvents() {
-    this.$elem.addEventListener('submit', (event) => {
-      event.preventDefault();
+    this.$elem.addEventListener('submit', () => {
+      this.succes();
+      //event.preventDefault();
 
-      const form = event.currentTarget;
+      // const form = event.currentTarget;
 
-      // Collect the form data while iterating over the inputs
-      const data = {};
+      // // Collect the form data while iterating over the inputs
+      // const data = {};
 
-      for (let i = 0, ii = form.length; i < ii; ++i) {
-        const input = form[i];
-        if (input.name) {
-          data[input.name] = input.value;
-        }
-      }
+      // for (let i = 0, ii = form.length; i < ii; ++i) {
+      //   const input = form[i];
+      //   if (input.name) {
+      //     data[input.name] = input.value;
+      //   }
+      // }
 
-      // Construct an HTTP request
-      var xhr = new XMLHttpRequest();
-      xhr.open(form.method, form.action, true);
-      xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
-      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      // // Construct an HTTP request
+      // var xhr = new XMLHttpRequest();
+      // xhr.open(form.method, form.action, true);
+      // xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+      // xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
-      // Send the collected data as JSON
-      xhr.send(JSON.stringify(data));
+      // // Send the collected data as JSON
+      // xhr.send(JSON.stringify(data));
 
-      // Callback function
+      // // Callback function
 
-      xhr.onloadend = (response) => {
-        if (response.target.status === 0) {
+      // xhr.onloadend = (response) => {
+      //   if (response.target.status === 0) {
 
-          // Failed XmlHttpRequest should be considered an undefined error.
-          this.fail();
+      //     // Failed XmlHttpRequest should be considered an undefined error.
+      //     this.fail();
 
-        } else if (response.target.status === 400) {
+      //   } else if (response.target.status === 400) {
 
-          this.fail();
-        } else if (response.target.status === 200) {
+      //     this.fail();
+      //   } else if (response.target.status === 200) {
 
-          this.succes();
-        }
-      };
+      //     this.succes();
+      //   }
+      // };
     })
   },
 

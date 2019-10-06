@@ -9,6 +9,7 @@
   $color = get_field('color', $prod_id_for_field)[0] -> post_title;
 
   $colors = get_field('products', $prod_id_for_field);
+  $pdf = get_field('pdf', $prod_id_for_field);
 @endphp
 
 <div class="product-details">
@@ -27,6 +28,17 @@
   @if ($attributes)
   <div class="product-details__attributes">
     @include('blocks.attributes', ['attributes' => $attributes])
+  </div>
+  @endif
+
+  @if ($pdf)
+  <div class="product-details__colors">
+    <h3 class="attributes__title text text--small bold">
+      {{ __('Paleta kolorów') }}
+    </h3>
+    <a href="{{ $pdf['url'] }}" data-fancybox class="text text--special" f>
+      Zobacz paletę kolorów
+    </a>
   </div>
   @endif
 

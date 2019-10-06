@@ -12,7 +12,7 @@
           {{ $title }}
         </h2>
         <p class="dropdown__description">
-          {{ $content }}
+          {!! $content !!}
         </p>
       </div>
       <div class="dropdown__icon">
@@ -27,7 +27,7 @@
             {{ $question['title'] }}
           </h3>
           <p class="dropdown__answear text">
-            {{ $question['content'] }}
+            {!! $question['content'] !!}
           </p>
       </li>
       @endforeach

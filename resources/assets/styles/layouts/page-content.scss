@@ -28,6 +28,13 @@
     & + p {
       margin-top: 0;
     }
+
+    a {
+      &:hover {
+        opacity: 0.8;
+        color: color("special");
+      }
+    }
   }
 
   h2 {
